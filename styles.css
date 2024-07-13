@@ -5,7 +5,9 @@
     --bg-color-4: #c6ede2;
     --text-color-dark: #333333;
     --text-color-light: #e0e0e0;
-    --accent-color: #4085af;
+    --accent-color: #9ca430;
+    --accent-color1: #a56328;
+    --accent-color2: #3c3d1e;
     --secondary-bg: #58445d;
 }
 
@@ -65,7 +67,7 @@ h1, h2, h3 {
 
 h1 {
     font-size: 3.5rem;
-    color: var(--accent-color);
+    color: var(--accent-color1);
     font-weight: 700;
 }
 
@@ -220,7 +222,7 @@ h2 {
 }
 
 .social-links a {
-    color: var(--accent-color);
+    color: var(--accent-color2);
     text-decoration: none;
     transition: color 0.3s ease;
 }
