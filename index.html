@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Kavindu Munugoda - Professional Portfolio</title>
+    <title>Dr. Kavindu Munugoda</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="timeline3/css/timeline.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="timeline3/js/timeline.js"></script>
 </head>
 <body>
     <header>
@@ -38,73 +36,103 @@
             </div>
         </section>
 
-        <section id="about" class="asymmetric-grid">
-            <div class="about-content">
+        <section id="about" class="section asymmetric-grid">
+            <div class="about-content fade-in">
                 <h2>About Me</h2>
                 <p>Innovative researcher and educator with 7+ years of experience and a Ph.D. in sustainable bio-pesticide development, specializing in aromatic plants and mosquito repellents. Experienced in environmental consultancy and passionate about fostering the next generation of scientists through engaging teaching methods.</p>
             </div>
-            <div class="skills-chart">
+            <div class="skills-chart fade-in">
                 <canvas id="skillsChart"></canvas>
             </div>
         </section>
 
-        <section id="education">
+        <section id="education" class="section">
             <h2>Education</h2>
-            <div class="education-item">
+            <div class="education-item fade-in">
                 <h3>PhD in Sustainable Bio-pesticide Development</h3>
                 <p>University of Sri Jayewardenepura, 2019-2023</p>
             </div>
-            <div class="education-item">
+            <div class="education-item fade-in">
                 <h3>B.Sc. (Hons) in Applied Sciences</h3>
                 <p>University of Sri Jayewardenepura, 2015-2018</p>
             </div>
         </section>
 
-        <section id="experience">
+        <section id="experience" class="section">
             <h2>Professional Experience</h2>
-            <div id='timeline-embed' style="width: 100%; height: 600px"></div>
+            <div class="slideshow-container">
+                <div class="slideshow-slide fade">
+                    <img src="experience1.jpg" alt="Experience 1">
+                    <div class="slide-caption">Experience 1 Caption</div>
+                </div>
+                <div class="slideshow-slide fade">
+                    <img src="experience2.jpg" alt="Experience 2">
+                    <div class="slide-caption">Experience 2 Caption</div>
+                </div>
+                <div class="slideshow-slide fade">
+                    <img src="experience3.jpg" alt="Experience 3">
+                    <div class="slide-caption">Experience 3 Caption</div>
+                </div>
+                <a class="prev" onclick="changeSlide(-1, 'experience')">&#10094;</a>
+                <a class="next" onclick="changeSlide(1, 'experience')">&#10095;</a>
+            </div>
         </section>
 
-        <section id="consultancy">
+        <section id="consultancy" class="section">
             <h2>Consultancy Projects</h2>
-            <div id='consultancy-timeline-embed' style="width: 100%; height: 400px"></div>
+            <div class="slideshow-container">
+                <div class="slideshow-slide fade">
+                    <img src="consultancy1.jpg" alt="Consultancy 1">
+                    <div class="slide-caption">Consultancy 1 Caption</div>
+                </div>
+                <div class="slideshow-slide fade">
+                    <img src="consultancy2.jpg" alt="Consultancy 2">
+                    <div class="slide-caption">Consultancy 2 Caption</div>
+                </div>
+                <div class="slideshow-slide fade">
+                    <img src="consultancy3.jpg" alt="Consultancy 3">
+                    <div class="slide-caption">Consultancy 3 Caption</div>
+                </div>
+                <a class="prev" onclick="changeSlide(-1, 'consultancy')">&#10094;</a>
+                <a class="next" onclick="changeSlide(1, 'consultancy')">&#10095;</a>
+            </div>
         </section>
 
-        <section id="research" class="asymmetric-grid">
+        <section id="research" class="section asymmetric-grid">
             <h2>Research Focus</h2>
-            <div class="research-item">
+            <div class="research-item fade-in">
                 <h3>Aromatic Plants</h3>
                 <p>Unveiled 127 novel aromatic plants with mosquito-repellent properties, expanding biodiversity knowledge.</p>
             </div>
-            <div class="research-item">
+            <div class="research-item fade-in">
                 <h3>Machine Learning</h3>
                 <p>Engineered a machine learning algorithm to forecast aromatic plant cultivation trends with 90% accuracy.</p>
             </div>
-            <div class="research-item">
+            <div class="research-item fade-in">
                 <h3>Product Development</h3>
                 <p>Pioneered the development of 5 market-ready mosquito repellent products, potentially impacting millions.</p>
             </div>
         </section>
 
-        <section id="publications">
+        <section id="publications" class="section">
             <h2>Key Publications</h2>
-            <div class="publication">
+            <div class="publication fade-in">
                 <h3>Choice modelling for the commercial cultivation of underutilized aromatic plants</h3>
                 <p>Munugoda, K. D., et al. (2023). Economic Botany (2023), 1-19.</p>
                 <div class="altmetric-embed" data-badge-type="donut" data-doi="10.1007/s12231-023-09573-y"></div>
             </div>
-            <div class="publication">
+            <div class="publication fade-in">
                 <h3>The complete chloroplast genome of Walla Patta, Gyrinops walla</h3>
                 <p>Chen, J., Lee, S. Y., Munugoda, K. D., et al. (2021). Mitochondrial DNA Part B, 6(6), 1699-1701.</p>
                 <div class="altmetric-embed" data-badge-type="donut" data-doi="10.1080/23802359.2021.1926362"></div>
             </div>
         </section>
 
-        <section id="contact">
+        <section id="contact" class="section">
             <h2>Get in Touch</h2>
             <p>Email: kmunugoda@gmail.com</p>
             <p>Phone: +94765783838</p>
-            <div class="social-links">                
+            <div class="social-links">
                 <a href="https://www.linkedin.com/in/kavindu-munugoda-18436bb6/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
                 <a href="https://scholar.google.com/citations?user=9kfdQ4cAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
                 <a href="https://orcid.org/0000-0003-2188-0249" target="_blank"><i class="fab fa-orcid"></i> ORCID</a>
@@ -118,7 +146,7 @@
         <p>© 2024 Dr. Kavindu Munugoda. All rights reserved.</p>
     </footer>
 
-    <script src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
     <script src="script.js"></script>
+    <script src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
 </body>
 </html>
