@@ -90,74 +90,22 @@ document.addEventListener('DOMContentLoaded', function() {
     // Listen for scroll events
     window.addEventListener('scroll', handleScrollAnimations);
 
-    // Function to load YouTube video
-    window.loadVideo = function(videoId) {
-        const videoContainer = document.getElementById('video-container');
-        if (videoContainer) {
-            const iframe = document.createElement('iframe');
-            iframe.src = `https://www.youtube.com/embed/${videoId}`;
-            iframe.width = '560';
-            iframe.height = '315';
-            iframe.allowFullscreen = true;
-            videoContainer.innerHTML = ''; // Clear any existing content
-            videoContainer.appendChild(iframe);
-            
-          // Tab functionality
-    const tabContainer = document.querySelector('.tab-container');
-    const tabDetails = document.getElementById('tab-details');
-    const tabTitle = document.getElementById('tab-title');
-    const tabVideo = document.getElementById('tab-video');
+    // Hero image slideshow
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.hero-slide');
+    const totalSlides = slides.length;
 
-    let isScrolling = false;
-    let scrollAmount = 0;
-    const scrollStep = 2;
-
-    function autoScroll() {
-        if (!isScrolling) return;
-
-        scrollAmount += scrollStep;
-        tabContainer.scrollLeft = scrollAmount;
-
-        if (scrollAmount >= tabContainer.scrollWidth - tabContainer.clientWidth) {
-            scrollAmount = 0;
-        }
-
-        requestAnimationFrame(autoScroll);
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.style.opacity = i === index ? 1 : 0;
+        });
     }
 
-    tabContainer.addEventListener('mouseenter', () => {
-        isScrolling = false;
-    });
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        showSlide(currentSlide);
+    }
 
-    tabContainer.addEventListener('mouseleave', () => {
-        isScrolling = true;
-        autoScroll();
-    });
-
-    document.querySelectorAll('.tab').forEach(tab => {
-        tab.addEventListener('mouseenter', () => {
-            const title = tab.dataset.title;
-            const video = tab.dataset.video;
-            tabTitle.textContent = title;
-            tabVideo.innerHTML = `<video width="100%" height="100%" controls>
-                                    <source src="${video}" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                  </video>`;
-            tabDetails.style.display = 'block';
-        });
-
-        tab.addEventListener('click', () => {
-            const link = tab.dataset.link;
-            if (link) {
-                window.location.href = link;
-            }
-        });
-    });
-
-    // Start auto-scrolling
-    isScrolling = true;
-    autoScroll();
-});
-        }
-    };
+    setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    showSlide(currentSlide); // Show initial slide
 });
