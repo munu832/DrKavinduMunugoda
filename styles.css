@@ -129,6 +129,64 @@ h2 {
     opacity: 1;
 }
 
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+.slideshow-slide {
+    display: none;
+}
+
+.slideshow-slide img {
+    width: 100%;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.slide-caption {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
 .publication {
     background-color: #f8f8f8;
     padding: 1.5rem;
@@ -167,81 +225,8 @@ h2 {
     background-color: var(--bg-color-4);
 }
 
-.experience-timeline {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.timeline-entry {
-    position: relative;
-    padding: 20px;
-    background: #f8f8f8;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    margin-left: 60px;
-    transition: transform 0.3s ease;
-}
-
-.timeline-entry:hover {
-    transform: translateY(-5px);
-}
-
-.timeline-icon {
-    position: absolute;
-    left: -60px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.timeline-icon img {
-    max-width: 60%;
-    max-height: 60%;
-}
-
 #consultancy {
     background-color: var(--bg-color-2);
-}
-
-.consultancy-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.consultancy-item {
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-.consultancy-item:hover {
-    transform: translateY(-5px);
-}
-
-.consultancy-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.consultancy-item h3 {
-    padding: 15px;
-    margin: 0;
-}
-
-.consultancy-item p, .consultancy-item ul {
-    padding: 0 15px 15px;
 }
 
 #research {
@@ -262,18 +247,6 @@ h2 {
 
 #publications {
     background-color: var(--bg-color-4);
-}
-
-.publication {
-    background-color: #f8f8f8;
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-    transition: transform 0.3s ease;
-}
-
-.publication:hover {
-    transform: translateY(-5px);
 }
 
 #contact {
