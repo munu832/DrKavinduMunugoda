@@ -75,9 +75,44 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setInterval(nextSlide, 5000);
 
-    // Initialize TimelineJS for Experience
-    new TL.Timeline('timeline-embed', 'https://docs.google.com/spreadsheets/d/1Z_-a-sAqDWcrqlLe02VU45kFthVXrA418qrcpQ5jj_Q/edit?usp=sharing');
+    // Slideshow for Experience and Consultancy sections
+    let slideIndex = {
+        'experience': 1,
+        'consultancy': 1
+    };
 
-    // Initialize TimelineJS for Consultancy
-    new TL.Timeline('consultancy-timeline-embed', 'https://docs.google.com/spreadsheets/d/1vrFpRnanMHO2u-VKVSqhX-tlgWYW1Btl79K5vUCffPo/edit?usp=sharing');
+    showSlides('experience', slideIndex.experience);
+    showSlides('consultancy', slideIndex.consultancy);
+
+    window.changeSlide = function(n, section) {
+        showSlides(section, slideIndex[section] += n);
+    }
+
+    function showSlides(section, n) {
+        let i;
+        let slides = document.querySelectorAll(`#${section} .slideshow-slide`);
+        if (n > slides.length) {slideIndex[section] = 1}
+        if (n < 1) {slideIndex[section] = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex[section]-1].style.display = "block";
+    }
+
+    // Fade-in effect
+    const fadeElements = document.querySelectorAll('.fade-in');
+
+    const fadeInOnScroll = () => {
+        fadeElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementBottom = element.getBoundingClientRect().bottom;
+
+            if (elementTop < window.innerHeight && elementBottom > 0) {
+                element.classList.add('visible');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', fadeInOnScroll);
+    fadeInOnScroll(); // Initial check on page load
 });
