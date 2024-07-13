@@ -60,20 +60,20 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Hero image slideshow
-    const slides = document.querySelectorAll('.hero-slide');
-    let currentSlide = 0;
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    let currentHeroSlide = 0;
 
-    function showSlide(index) {
-        slides[currentSlide].classList.remove('active');
-        slides[index].classList.add('active');
-        currentSlide = index;
+    function showHeroSlide(index) {
+        heroSlides[currentHeroSlide].classList.remove('active');
+        heroSlides[index].classList.add('active');
+        currentHeroSlide = index;
     }
 
-    function nextSlide() {
-        showSlide((currentSlide + 1) % slides.length);
+    function nextHeroSlide() {
+        showHeroSlide((currentHeroSlide + 1) % heroSlides.length);
     }
 
-    setInterval(nextSlide, 5000);
+    setInterval(nextHeroSlide, 5000);
 
     // Slideshow for Experience and Consultancy sections
     let slideIndex = {
@@ -81,11 +81,26 @@ document.addEventListener('DOMContentLoaded', function() {
         'consultancy': 1
     };
 
-    showSlides('experience', slideIndex.experience);
-    showSlides('consultancy', slideIndex.consultancy);
+    let slideshowIntervals = {};
+
+    function startSlideshow(section) {
+        showSlides(section, slideIndex[section]);
+        slideshowIntervals[section] = setInterval(() => {
+            changeSlide(1, section);
+        }, 5000); // Change slide every 5 seconds
+    }
+
+    function stopSlideshow(section) {
+        clearInterval(slideshowIntervals[section]);
+    }
+
+    startSlideshow('experience');
+    startSlideshow('consultancy');
 
     window.changeSlide = function(n, section) {
+        stopSlideshow(section);
         showSlides(section, slideIndex[section] += n);
+        startSlideshow(section);
     }
 
     function showSlides(section, n) {
@@ -98,6 +113,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         slides[slideIndex[section]-1].style.display = "block";
     }
+
+    // Add click events to slides
+    document.querySelectorAll('.slideshow-slide').forEach(slide => {
+        slide.addEventListener('click', function() {
+            const section = this.closest('section').id;
+            changeSlide(1, section);
+        });
+    });
+
+    // Add mouseover and mouseout events to pause and resume slideshow
+    document.querySelectorAll('.slideshow-container').forEach(container => {
+        const section = container.closest('section').id;
+        container.addEventListener('mouseover', () => stopSlideshow(section));
+        container.addEventListener('mouseout', () => startSlideshow(section));
+    });
 
     // Fade-in effect
     const fadeElements = document.querySelectorAll('.fade-in');
