@@ -1,6 +1,10 @@
 :root {
-    --bg-color: #1a1a1a;
-    --text-color: #e0e0e0;
+    --bg-color-1: #1a1a1a;
+    --bg-color-2: #e6f2ff;
+    --bg-color-3: #e6ffe6;
+    --bg-color-4: #ffffff;
+    --text-color-dark: #333333;
+    --text-color-light: #e0e0e0;
     --accent-color: #4CAF50;
     --secondary-bg: #2c2c2c;
 }
@@ -12,10 +16,9 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
+    color: var(--text-color-dark);
 }
 
 header {
@@ -38,7 +41,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: var(--text-color);
+    color: var(--text-color-light);
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -56,6 +59,7 @@ section {
 }
 
 h1, h2, h3 {
+    font-family: 'Georgia', serif;
     margin-bottom: 1rem;
 }
 
@@ -78,33 +82,138 @@ h2 {
     gap: 2rem;
 }
 
+#hero {
+    background-color: var(--bg-color-1);
+    color: var(--text-color-light);
+}
+
 .hero-image img {
     width: 100%;
     height: auto;
     object-fit: cover;
     border-radius: 8px;
-    opacity: 0.7;
 }
 
-.research-item, .publication, .experience-item, .education-item, .methodology-step {
-    background-color: var(--secondary-bg);
+#about {
+    background-color: var(--bg-color-2);
+}
+
+#education {
+    background-color: var(--bg-color-3);
+}
+
+.education-item {
+    background-color: #fff;
     padding: 1.5rem;
     border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
 }
 
-.research-item:hover, .publication:hover, .experience-item:hover, .education-item:hover, .methodology-step:hover {
+#experience {
+    background-color: var(--bg-color-4);
+}
+
+.experience-timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.timeline-entry {
+    position: relative;
+    padding: 20px;
+    background: #f8f8f8;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    margin-left: 60px;
+}
+
+.timeline-icon {
+    position: absolute;
+    left: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.timeline-icon img {
+    max-width: 60%;
+    max-height: 60%;
+}
+
+#consultancy {
+    background-color: var(--bg-color-2);
+}
+
+.consultancy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.consultancy-item {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.consultancy-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-.publication, .experience-item, .education-item {
-    margin-bottom: 2rem;
+.consultancy-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.consultancy-item h3 {
+    padding: 15px;
+    margin: 0;
+}
+
+.consultancy-item p, .consultancy-item ul {
+    padding: 0 15px 15px;
+}
+
+#research {
+    background-color: var(--bg-color-3);
+}
+
+.research-item {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+#publications {
+    background-color: var(--bg-color-4);
+}
+
+.publication {
+    background-color: #f8f8f8;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+#contact {
+    background-color: var(--bg-color-2);
 }
 
 .social-links {
     display: flex;
-    justify-content: start;
     flex-wrap: wrap;
     gap: 1rem;
     margin-top: 1rem;
@@ -117,13 +226,14 @@ h2 {
 }
 
 .social-links a:hover {
-    color: var(--text-color);
+    color: var(--text-color-dark);
 }
 
 footer {
     text-align: center;
     padding: 2rem;
     background-color: var(--secondary-bg);
+    color: var(--text-color-light);
 }
 
 @media (max-width: 768px) {
@@ -131,27 +241,13 @@ footer {
         flex-direction: column;
         align-items: center;
     }
-
     nav ul li {
         margin: 0.5rem 0;
     }
-
     h1 {
         font-size: 2.5rem;
     }
-
     h2 {
         font-size: 2rem;
     }
-}
-
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
 }
