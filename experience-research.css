@@ -1,0 +1,16 @@
+.experience-item {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.experience-item h3 {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.experience-item ul {
+    padding-left: 1.5rem;
+}
