@@ -13,117 +13,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Kavindu Munugoda</title>
+    <meta name="description" content="Personal website of Dr. Kavindu Munugoda, specializing in Pharmacognosy, Phytochemistry, Ethnobotany, Chemical Ecology, Food Science, and Citizen Science.">
+    <meta property="og:image" content="https://munu832.github.io/DrKavinduMunugoda/thumbnail.jpg">
+    <meta property="og:url" content="https://munu832.github.io/DrKavinduMunugoda/">
+    <meta property="og:title" content="Dr. Kavindu Munugoda">
+    <meta property="og:description" content="Personal website of Dr. Kavindu Munugoda, specializing in Pharmacognosy, Phytochemistry, Ethnobotany, Chemical Ecology, Food Science, and Citizen Science.">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="experience-research.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#consultancy">Consultancy</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li class="nav-item active"><a href="#about">About</a></li>
+                <li class="nav-item"><a href="#experience-research">Experience & Research</a></li>
+                <li class="nav-item"><a href="#publications">Publications</a></li>
+                <li class="nav-item"><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+        <button id="theme-toggle" onclick="switchTheme()">Toggle Dark Mode</button>
     </header>
 
     <main>
-        <section id="hero">
+        <section id="hero" class="section">
+            <div class="video-background">
+                <video autoplay loop muted playsinline>
+                    <source src="hero.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
             <div class="hero-content">
                 <h1>Dr. Kavindu Munugoda</h1>
                 <p>Pharmacognosy | Phytochemistry | Ethnobotany | Chemical Ecology | Food Science | Citizen Science</p>
             </div>
-            <div class="hero-slideshow">
-                <img src="hero-image-1.jpg" alt="Dr. Kavindu Munugoda" class="hero-slide active">
-                <img src="hero-image-2.jpg" alt="Research in progress" class="hero-slide">
-                <img src="hero-image-3.jpg" alt="Laboratory work" class="hero-slide">
+        </section>
+
+        <section id="about" class="section card">
+            <h2>About Me</h2>
+            <div class="about-content-wrapper">
+                <div class="about-content fade-in">
+                    <p>Innovative researcher and educator with 7+ years of experience and a Ph.D. in sustainable bio-pesticide development, specializing in aromatic plants and mosquito repellents. Experienced in environmental consultancy and passionate about fostering the next generation of scientists through engaging teaching methods.</p>
+                </div>
+                <div class="skills-chart fade-in">
+                    <canvas id="skillsChart"></canvas>
+                </div>
             </div>
         </section>
 
-        <section id="about" class="section asymmetric-grid">
-            <div class="about-content fade-in">
-                <h2>About Me</h2>
-                <p>Innovative researcher and educator with 7+ years of experience and a Ph.D. in sustainable bio-pesticide development, specializing in aromatic plants and mosquito repellents. Experienced in environmental consultancy and passionate about fostering the next generation of scientists through engaging teaching methods.</p>
-            </div>
-            <div class="skills-chart fade-in">
-                <canvas id="skillsChart"></canvas>
+        <section id="experience-research" class="section card">
+            <h2>Experience & Research</h2>
+            <div id="experience-research-content">
+                <!-- Add your experience and research content here -->
             </div>
         </section>
 
-        <section id="education" class="section">
-            <h2>Education</h2>
-            <div class="education-item fade-in">
-                <h3>PhD in Sustainable Bio-pesticide Development</h3>
-                <p>University of Sri Jayewardenepura, 2019-2023</p>
-            </div>
-            <div class="education-item fade-in">
-                <h3>B.Sc. (Hons) in Applied Sciences</h3>
-                <p>University of Sri Jayewardenepura, 2015-2018</p>
-            </div>
-        </section>
-
-        <section id="experience" class="section">
-            <h2>Professional Experience</h2>
-            <div class="slideshow-container">
-                <div class="slideshow-slide fade">
-                    <img src="experience1.jpg" alt="Experience 1">
-                    <div class="slide-caption">Experience 1 Caption</div>
-                </div>
-                <div class="slideshow-slide fade">
-                    <img src="experience2.jpg" alt="Experience 2">
-                    <div class="slide-caption">Experience 2 Caption</div>
-                </div>
-                <div class="slideshow-slide fade">
-                    <img src="experience3.jpg" alt="Experience 3">
-                    <div class="slide-caption">Experience 3 Caption</div>
-                </div>
-                <a class="prev" onclick="changeSlide(-1, 'experience')">&#10094;</a>
-                <a class="next" onclick="changeSlide(1, 'experience')">&#10095;</a>
-            </div>
-        </section>
-
-        <section id="consultancy" class="section">
-            <h2>Consultancy Projects</h2>
-            <div class="slideshow-container">
-                <div class="slideshow-slide fade">
-                    <img src="consultancy1.jpg" alt="Consultancy 1">
-                    <div class="slide-caption">Consultancy 1 Caption</div>
-                </div>
-                <div class="slideshow-slide fade">
-                    <img src="consultancy2.jpg" alt="Consultancy 2">
-                    <div class="slide-caption">Consultancy 2 Caption</div>
-                </div>
-                <div class="slideshow-slide fade">
-                    <img src="consultancy3.jpg" alt="Consultancy 3">
-                    <div class="slide-caption">Consultancy 3 Caption</div>
-                </div>
-                <a class="prev" onclick="changeSlide(-1, 'consultancy')">&#10094;</a>
-                <a class="next" onclick="changeSlide(1, 'consultancy')">&#10095;</a>
-            </div>
-        </section>
-
-        <section id="research" class="section asymmetric-grid">
-            <h2>Research Focus</h2>
-            <div class="research-item fade-in">
-                <h3>Aromatic Plants</h3>
-                <p>Unveiled 127 novel aromatic plants with mosquito-repellent properties, expanding biodiversity knowledge.</p>
-            </div>
-            <div class="research-item fade-in">
-                <h3>Machine Learning</h3>
-                <p>Engineered a machine learning algorithm to forecast aromatic plant cultivation trends with 90% accuracy.</p>
-            </div>
-            <div class="research-item fade-in">
-                <h3>Product Development</h3>
-                <p>Pioneered the development of 5 market-ready mosquito repellent products, potentially impacting millions.</p>
-            </div>
-        </section>
-
-        <section id="publications" class="section">
+        <section id="publications" class="section card">
             <h2>Key Publications</h2>
             <div class="publication fade-in">
                 <h3>Choice modelling for the commercial cultivation of underutilized aromatic plants</h3>
@@ -137,16 +84,26 @@
             </div>
         </section>
 
-        <section id="contact" class="section">
+        <section id="contact" class="section card">
             <h2>Get in Touch</h2>
-            <p>Email: kmunugoda@gmail.com</p>
-            <p>Phone: +94765783838</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/kavindu-munugoda-18436bb6/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="https://scholar.google.com/citations?user=9kfdQ4cAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
-                <a href="https://orcid.org/0000-0003-2188-0249" target="_blank"><i class="fab fa-orcid"></i> ORCID</a>
-                <a href="https://www.researchgate.net/profile/Kavindu-Munugoda" target="_blank"><i class="fab fa-researchgate"></i> ResearchGate</a>
-                <a href="https://github.com/munu832" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>kmunugoda@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+94765783838</p>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/kavindu-munugoda-18436bb6/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://scholar.google.com/citations?user=9kfdQ4cAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="https://orcid.org/0000-0003-2188-0249" target="_blank"><i class="fab fa-orcid"></i></a>
+                    <a href="https://www.researchgate.net/profile/Kavindu-Munugoda" target="_blank"><i class="fab fa-researchgate"></i></a>
+                    <a href="https://github.com/munu832" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
             </div>
         </section>
     </main>
@@ -156,6 +113,6 @@
     </footer>
 
     <script src="script.js"></script>
-    <script src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
+    <script src="experience-research.js"></script>
 </body>
 </html>
