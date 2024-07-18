@@ -1,4 +1,12 @@
-<div class="experience-item">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Kavindu Munugoda - Experience & Research</title>
+    <link rel="stylesheet" href="experience-research.css">
+</head>
+<body>
     <main>
         <ul class="slider">
             <li class="slide">
@@ -7,9 +15,11 @@
                     <h2 class="title">Research Topic 1</h2>
                     <p class="description">Description of your first research topic or experience. Highlight key findings or skills.</p>
                     <button class="more ripple">
-                        <div class="icon" role="button"><svg viewBox="0 0 512 512">
-                            <use xlink:href="#play"></use>
-                        </svg></div>
+                        <div class="icon" role="button">
+                            <svg viewBox="0 0 512 512">
+                                <use xlink:href="#play"></use>
+                            </svg>
+                        </div>
                     </button>
                 </div>
             </li>
@@ -19,9 +29,11 @@
                     <h2 class="title">Research Topic 2</h2>
                     <p class="description">Overview of your second research area or significant project. Discuss methodologies or outcomes.</p>
                     <button class="more ripple">
-                        <div class="icon" role="button"><svg viewBox="0 0 512 512">
-                            <use xlink:href="#play"></use>
-                        </svg></div>
+                        <div class="icon" role="button">
+                            <svg viewBox="0 0 512 512">
+                                <use xlink:href="#play"></use>
+                            </svg>
+                        </div>
                     </button>
                 </div>
             </li>
@@ -31,23 +43,29 @@
                     <h2 class="title">Research Topic 3</h2>
                     <p class="description">Details about your third area of expertise or notable achievement. Emphasize impact or innovation.</p>
                     <button class="more ripple">
-                        <div class="icon" role="button"><svg viewBox="0 0 512 512">
-                            <use xlink:href="#play"></use>
-                        </svg></div>
+                        <div class="icon" role="button">
+                            <svg viewBox="0 0 512 512">
+                                <use xlink:href="#play"></use>
+                            </svg>
+                        </div>
                     </button>
                 </div>
             </li>
         </ul>
         <nav class='nav'>
             <div class="btn ripple prev">
-                <div class="icon" role="button"><svg viewBox="0 0 512 512">
-                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M244 400L100 256l144-144M120 256h292"></path>
-                </svg></div>
+                <div class="icon" role="button">
+                    <svg viewBox="0 0 512 512">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M244 400L100 256l144-144M120 256h292"></path>
+                    </svg>
+                </div>
             </div>
             <div class='btn ripple next'>
-                <div class="icon" role="button"><svg viewBox="0 0 512 512">
-                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M268 112l144 144-144 144M392 256H100"></path>
-                </svg></div>
+                <div class="icon" role="button">
+                    <svg viewBox="0 0 512 512">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M268 112l144 144-144 144M392 256H100"></path>
+                    </svg>
+                </div>
             </div>
         </nav>
     </main>
@@ -58,47 +76,49 @@
     </svg>
 
     <script type="x-shader/x-fragment" data-title="Research Topic 1">
-    #version 300 es
-    precision highp float;
-    out vec4 fragColor;
-    uniform vec2 resolution;
-    uniform float time;
-    
-    void main() {
-        vec2 uv = gl_FragCoord.xy / resolution.xy;
-        vec3 col = 0.5 + 0.5 * cos(time + uv.xyx + vec3(0,2,4));
-        fragColor = vec4(col, 1.0);
-    }
+        #version 300 es
+        precision highp float;
+        out vec4 fragColor;
+        uniform vec2 resolution;
+        uniform float time;
+        
+        void main() {
+            vec2 uv = gl_FragCoord.xy / resolution.xy;
+            vec3 col = 0.5 + 0.5 * cos(time + uv.xyx + vec3(0,2,4));
+            fragColor = vec4(col, 1.0);
+        }
     </script>
 
     <script type="x-shader/x-fragment" data-title="Research Topic 2">
-    #version 300 es
-    precision highp float;
-    out vec4 fragColor;
-    uniform vec2 resolution;
-    uniform float time;
-    
-    void main() {
-        vec2 uv = gl_FragCoord.xy / resolution.xy;
-        float t = time * 0.5;
-        vec3 col = vec3(sin(uv.x * 10.0 + t), cos(uv.y * 10.0 - t), sin(uv.x * uv.y * 10.0 + t));
-        fragColor = vec4(col, 1.0);
-    }
+        #version 300 es
+        precision highp float;
+        out vec4 fragColor;
+        uniform vec2 resolution;
+        uniform float time;
+        
+        void main() {
+            vec2 uv = gl_FragCoord.xy / resolution.xy;
+            float t = time * 0.5;
+            vec3 col = vec3(sin(uv.x * 10.0 + t), cos(uv.y * 10.0 - t), sin(uv.x * uv.y * 10.0 + t));
+            fragColor = vec4(col, 1.0);
+        }
     </script>
 
     <script type="x-shader/x-fragment" data-title="Research Topic 3">
-    #version 300 es
-    precision highp float;
-    out vec4 fragColor;
-    uniform vec2 resolution;
-    uniform float time;
-    
-    void main() {
-        vec2 uv = gl_FragCoord.xy / resolution.xy;
-        float d = length(uv - 0.5);
-        vec3 col = vec3(sin(d * 10.0 - time), cos(d * 8.0 + time), sin(d * 6.0 - time));
-        fragColor = vec4(col, 1.0);
-    }
+        #version 300 es
+        precision highp float;
+        out vec4 fragColor;
+        uniform vec2 resolution;
+        uniform float time;
+        
+        void main() {
+            vec2 uv = gl_FragCoord.xy / resolution.xy;
+            float d = length(uv - 0.5);
+            vec3 col = vec3(sin(d * 10.0 - time), cos(d * 8.0 + time), sin(d * 6.0 - time));
+            fragColor = vec4(col, 1.0);
+        }
     </script>
-    <script src="experience-research.js"></script>
 
+    <script src="experience-research.js"></script>
+</body>
+</html>
