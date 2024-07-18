@@ -173,7 +173,7 @@ h2 {
     top: 50%;
     left: 10%; /* Adjust this value for desired left padding */
     transform: translateY(-50%);
-    max-width: 60%; /* Ensures content doesn't stretch too wide */
+    max-width: 50%; /* Ensures content doesn't stretch too wide */
     z-index: 1;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
