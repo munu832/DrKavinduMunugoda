@@ -32,7 +32,7 @@ body {
     color: var(--text-color);
     background-color: var(--bg-color);
     transition: background-color 0.3s, color 0.3s;
-    background-image: url('light-mode-bg.jpg');
+    background-image: url('light-mode-bg.jpeg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
