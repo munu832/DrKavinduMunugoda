@@ -246,25 +246,6 @@ footer {
     background-color: var(--primary-hover-color);
 }
 
-.whatsapp-share {
-    background-color: #25D366;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s ease;
-}
-
-.whatsapp-share:hover {
-    background-color: #128C7E;
-}
-
-.whatsapp-share i {
-    font-size: 1.5rem;
-}
-
 @media (max-width: 768px) {
     .about-content-wrapper {
         flex-direction: column;
