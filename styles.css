@@ -32,6 +32,14 @@ body {
     color: var(--text-color);
     background-color: var(--bg-color);
     transition: background-color 0.3s, color 0.3s;
+    background-image: url('light-mode-bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+body.darkmode {
+    background-image: url('dark-mode-bg.jpg');
 }
 
 header {
@@ -42,6 +50,9 @@ header {
     background-color: #f0a105;
     padding: 1rem;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav ul {
@@ -230,9 +241,6 @@ footer {
 }
 
 #theme-toggle {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
     background-color: var(--accent-color);
     color: var(--text-color);
     border: none;
@@ -247,6 +255,33 @@ footer {
 }
 
 @media (max-width: 768px) {
+    main {
+        padding-top: 120px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    nav {
+        margin-bottom: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    #theme-toggle {
+        margin-top: 1rem;
+    }
+
     .about-content-wrapper {
         flex-direction: column;
     }
@@ -265,6 +300,11 @@ footer {
 
     .section {
         padding: 3rem 1rem;
+    }
+
+    .section:not(#hero):not(#experience-research) {
+        min-height: auto;
+        padding: 2rem 1rem;
     }
 
     .contact-info {
