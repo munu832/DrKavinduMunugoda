@@ -2,7 +2,7 @@
 
 :root {
     --primary-color: #1a237e;
-    --primary-hover-color: #3949ab;
+    --primary-hover-color: #0D346D;
     --accent-color: #9c27b0;
     --text-color: #333;
     --bg-color: #fafafa;
@@ -12,7 +12,7 @@
 
 .darkmode {
     --primary-color: #01579b;
-    --primary-hover-color: #4f83cc;
+    --primary-hover-color: #D48434;
     --accent-color: #4caf50;
     --text-color: #f8f8f8;
     --bg-color: #212121;
@@ -47,7 +47,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #4288a6;
+    background-color: #5CAC8C;
     padding: 1rem;
     z-index: 1000;
     display: flex;
@@ -281,7 +281,7 @@ h2 {
 footer {
     text-align: center;
     padding: 2rem;
-    background-color: #4288a6;
+    background-color: #5CAC8C;
     color: var(--text-color);
 }
 
