@@ -47,7 +47,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #f0a105;
+    background-color: #4288a6;
     padding: 1rem;
     z-index: 1000;
     display: flex;
@@ -281,7 +281,7 @@ h2 {
 footer {
     text-align: center;
     padding: 2rem;
-    background-color: var(--primary-color);
+    background-color: #4288a6;
     color: var(--text-color);
 }
 
