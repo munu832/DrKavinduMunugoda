@@ -402,4 +402,49 @@ footer {
     .hero-content p {
         font-size: 0.9rem;
     }
+}.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 1000;
+    }
+
+    #main-nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #f8f8f8;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+        .nav-item lord-icon {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-item {
+        margin-bottom: 10px;
+    }
+    
+    .nav-item a {
+        display: flex;
+        align-items: center;
+    }
+}
+    }
+
+    #main-nav.show {
+        display: block;
+    }
 }
