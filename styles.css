@@ -32,48 +32,48 @@ body {
     color: var(--text-color);
     background-color: var(--bg-color);
     transition: background-color 0.3s, color 0.3s;
-    background-image: background-image: linear-gradient(
-  90deg,
-  hsl(240deg 7% 92%) 0%,
-  hsl(277deg 33% 92%) 16%,
-  hsl(320deg 71% 93%) 25%,
-  hsl(339deg 100% 93%) 33%,
-  hsl(1deg 100% 92%) 40%,
-  hsl(21deg 100% 87%) 46%,
-  hsl(34deg 100% 82%) 51%,
-  hsl(44deg 93% 78%) 57%,
-  hsl(61deg 63% 73%) 62%,
-  hsl(73deg 67% 73%) 68%,
-  hsl(86deg 70% 74%) 73%,
-  hsl(103deg 72% 76%) 78%,
-  hsl(124deg 74% 77%) 83%,
-  hsl(142deg 81% 72%) 88%,
-  hsl(156deg 86% 65%) 94%,
-  hsl(167deg 91% 52%) 100%
-);
+    background-image: linear-gradient(
+        90deg,
+        hsl(240deg 7% 92%) 0%,
+        hsl(277deg 33% 92%) 16%,
+        hsl(320deg 71% 93%) 25%,
+        hsl(339deg 100% 93%) 33%,
+        hsl(1deg 100% 92%) 40%,
+        hsl(21deg 100% 87%) 46%,
+        hsl(34deg 100% 82%) 51%,
+        hsl(44deg 93% 78%) 57%,
+        hsl(61deg 63% 73%) 62%,
+        hsl(73deg 67% 73%) 68%,
+        hsl(86deg 70% 74%) 73%,
+        hsl(103deg 72% 76%) 78%,
+        hsl(124deg 74% 77%) 83%,
+        hsl(142deg 81% 72%) 88%,
+        hsl(156deg 86% 65%) 94%,
+        hsl(167deg 91% 52%) 100%
+    );
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
 }
 
 body.darkmode {
-    background-image: background-image: linear-gradient(
-  325deg,
-  hsl(240deg 100% 20%) 0%,
-  hsl(304deg 100% 14%) 18%,
-  hsl(334deg 100% 16%) 28%,
-  hsl(350deg 100% 15%) 36%,
-  hsl(19deg 100% 13%) 43%,
-  hsl(34deg 75% 12%) 50%,
-  hsl(48deg 25% 13%) 57%,
-  hsl(53deg 15% 16%) 63%,
-  hsl(42deg 25% 20%) 69%,
-  hsl(34deg 33% 25%) 75%,
-  hsl(27deg 37% 30%) 81%,
-  hsl(19deg 37% 37%) 87%,
-  hsl(10deg 35% 45%) 93%,
-  hsl(0deg 36% 53%) 100%
-);
+    background-image: linear-gradient(
+        325deg,
+        hsl(240deg 100% 20%) 0%,
+        hsl(304deg 100% 14%) 18%,
+        hsl(334deg 100% 16%) 28%,
+        hsl(350deg 100% 15%) 36%,
+        hsl(19deg 100% 13%) 43%,
+        hsl(34deg 75% 12%) 50%,
+        hsl(48deg 25% 13%) 57%,
+        hsl(53deg 15% 16%) 63%,
+        hsl(42deg 25% 20%) 69%,
+        hsl(34deg 33% 25%) 75%,
+        hsl(27deg 37% 30%) 81%,
+        hsl(19deg 37% 37%) 87%,
+        hsl(10deg 35% 45%) 93%,
+        hsl(0deg 36% 53%) 100%
+    );
 }
 
 header {
@@ -164,7 +164,7 @@ main {
     font-size: 0.9rem;
 }
 
-.social-links a {
+social-links a {
     font-size: 1.5rem;
 }
 
@@ -235,12 +235,14 @@ h2 {
 }
 
 .card {
-    background-color: var(--card-bg-color);
-    border: 2px solid rgba(169, 150, 253, 0.5);
+    backdrop-filter: blur(16px) saturate(183%);
+    -webkit-backdrop-filter: blur(16px) saturate(183%);
+    background-color: rgba(17, 25, 40, 0.62);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
     box-shadow: 0px 4px 5px 0px var(--shadow-color),
                 0px 1px 8px 0px var(--shadow-color),
                 0px 2px 4px -1px var(--shadow-color);
-    border-radius: 8px;
     padding: 2rem;
     margin-bottom: 2rem;
 }
@@ -290,7 +292,7 @@ h2 {
     gap: 1.5rem;
 }
 
-.social-links a {
+social-links a {
     color: var(--accent-color);
     font-size: 2rem;
     transition: color 0.3s ease, transform 0.3s ease;
@@ -422,12 +424,11 @@ footer {
     #hero {
         height: 50vh;
     }
-    
+
     .hero-content {
         left: 5%;
         max-width: 90%;
     }
-}
 
     .hero-content h1 {
         font-size: 2rem;
@@ -436,7 +437,9 @@ footer {
     .hero-content p {
         font-size: 0.9rem;
     }
-}.menu-icon {
+}
+
+.menu-icon {
     display: none;
     font-size: 30px;
     cursor: pointer;
@@ -460,32 +463,36 @@ footer {
         background: #f8f8f8;
         padding: 20px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-
-        .nav-item lord-icon {
-    vertical-align: middle;
-    margin-right: 5px;
-}
-
-@media screen and (max-width: 768px) {
-    .nav-item {
-        margin-bottom: 10px;
-    }
-    
-    .nav-item a {
-        display: flex;
-        align-items: center;
-    }
-}
     }
 
     #main-nav.show {
         display: block;
     }
-}/* Glassmorphism card effect */
+
+    .nav-item {
+        margin-bottom: 10px;
+    }
+
+    .nav-item a {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-item lord-icon {
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+}
+
+/* Glassmorphism card effect */
 .card {
     backdrop-filter: blur(16px) saturate(183%);
     -webkit-backdrop-filter: blur(16px) saturate(183%);
     background-color: rgba(17, 25, 40, 0.62);
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.125);
+    box-shadow: 0px 4px 5px 0px var(--shadow-color),
+                0px 1px 8px 0px var(--shadow-color),
+                0px 2px 4px -1px var(--shadow-color);
 }
+
