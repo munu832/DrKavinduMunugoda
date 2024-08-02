@@ -196,6 +196,15 @@ h2 lord-icon {
     flex-shrink: 0;
 }
 
+.icon-wrapper lord-icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.dark-mode .icon-wrapper lord-icon {
+    filter: invert(1);
+}
+
 .video-background {
     position: absolute;
     top: 0;
