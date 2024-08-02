@@ -2,9 +2,11 @@
 
 :root {
     --primary-color: #8B4513;
+    --secondary-color: #f0f0f0;
     --primary-hover-color: #A0522D;
     --accent-color: #D2691E;
     --text-color: #000000;
+    --link-color: #0066cc;
     --bg-color: #F5DEB3;
     --card-bg-color: #FAEBD7;
     --shadow-color: rgba(0, 0, 0, 0.1);
@@ -14,9 +16,11 @@
 
 .darkmode {
     --primary-color: #4B0082;
+    --secondary-color: #222;
     --primary-hover-color: #8A2BE2;
     --accent-color: #9370DB;
     --text-color: #FFFFFF;
+    --link-color: #66b3ff;
     --bg-color: #191970;
     --card-bg-color: #483D8B;
     --shadow-color: rgba(255, 255, 255, 0.1);
@@ -28,7 +32,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Nunito", sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
 }
 
 body {
@@ -89,9 +93,10 @@ header {
 }
 
 nav ul {
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
+   list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
 }
 
 nav ul li {
@@ -331,7 +336,7 @@ footer {
 }
 
 #theme-toggle {
-    background-color: var(--accent-color);
+    background-color: var(--link-color);
     color: var(--text-color);
     border: none;
     padding: 0.5rem 1rem;
