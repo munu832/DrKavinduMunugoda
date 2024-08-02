@@ -8,6 +8,8 @@
     --bg-color: #fafafa;
     --card-bg-color: rgba(255, 255, 255, 0.1);
     --shadow-color: rgba(0, 0, 0, 0.1);
+    --lord-icon-primary: #3498db;
+    --lord-icon-secondary: #2ecc71;
 }
 
 .darkmode {
@@ -18,6 +20,8 @@
     --bg-color: #212121;
     --card-bg-color: rgba(0, 0, 0, 0.1);
     --shadow-color: rgba(255, 255, 255, 0.1);
+    --lord-icon-primary: #ffffff;
+    --lord-icon-secondary: #cccccc;
 }
 
 * {
@@ -35,16 +39,16 @@ body {
     background-image: linear-gradient(
         125deg,
         hsl(172deg 61% 84%) 0%,
-  hsl(158deg 63% 85%) 14%,
-  hsl(139deg 61% 87%) 26%,
-  hsl(106deg 59% 88%) 37%,
-  hsl(78deg 62% 86%) 48%,
-  hsl(55deg 69% 85%) 57%,
-  hsl(55deg 70% 88%) 66%,
-  hsl(54deg 71% 91%) 74%,
-  hsl(54deg 72% 94%) 82%,
-  hsl(53deg 74% 97%) 91%,
-  hsl(0deg 0% 100%) 100%
+        hsl(158deg 63% 85%) 14%,
+        hsl(139deg 61% 87%) 26%,
+        hsl(106deg 59% 88%) 37%,
+        hsl(78deg 62% 86%) 48%,
+        hsl(55deg 69% 85%) 57%,
+        hsl(55deg 70% 88%) 66%,
+        hsl(54deg 71% 91%) 74%,
+        hsl(54deg 72% 94%) 82%,
+        hsl(53deg 74% 97%) 91%,
+        hsl(0deg 0% 100%) 100%
     );
     background-size: cover;
     background-attachment: fixed;
@@ -159,7 +163,7 @@ main {
     font-size: 0.9rem;
 }
 
-social-links a {
+.social-links a {
     font-size: 1.5rem;
 }
 
@@ -193,16 +197,16 @@ h2 {
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 60vh; /* Adjust this value as needed */
-    min-height: 400px; /* Ensures a minimum height on smaller screens */
+    height: 60vh;
+    min-height: 400px;
 }
 
 .hero-content {
     position: absolute;
     top: 50%;
-    left: 10%; /* Adjust this value for desired left padding */
+    left: 10%;
     transform: translateY(-50%);
-    max-width: 50%; /* Ensures content doesn't stretch too wide */
+    max-width: 50%;
     z-index: 1;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -230,9 +234,9 @@ h2 {
 }
 
 .card {
-    backdrop-filter: blur(10px) saturate(200%);
-    -webkit-backdrop-filter: blur(8px) saturate(200%);
-    background-color: rgba(17, 25, 40, 0.26);
+    backdrop-filter: blur(16px) saturate(183%);
+    -webkit-backdrop-filter: blur(16px) saturate(183%);
+    background-color: rgba(17, 25, 40, 0.62);
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.125);
     box-shadow: 0px 4px 5px 0px var(--shadow-color),
@@ -240,6 +244,9 @@ h2 {
                 0px 2px 4px -1px var(--shadow-color);
     padding: 2rem;
     margin-bottom: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 2rem auto;
 }
 
 .publication {
@@ -287,7 +294,7 @@ h2 {
     gap: 1.5rem;
 }
 
-social-links a {
+.social-links a {
     color: var(--accent-color);
     font-size: 2rem;
     transition: color 0.3s ease, transform 0.3s ease;
@@ -330,7 +337,81 @@ footer {
     background-color: var(--primary-hover-color);
 }
 
-@media (max-width: 768px) {
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.download-cv-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    z-index: 10;
+}
+
+.download-cv-btn:hover {
+    background-color: var(--primary-hover-color);
+    box-shadow: 0 6px 8px var(--shadow-color);
+    transform: translateX(-50%) translateY(-3px);
+}
+
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 1000;
+    }
+
+    #main-nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: var(--accent-color);
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    #main-nav.show {
+        display: block;
+    }
+
+    .nav-item {
+        margin-bottom: 10px;
+    }
+
+    .nav-item a {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-item lord-icon {
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+
     main {
         padding-top: 120px;
     }
@@ -393,33 +474,6 @@ footer {
         min-height: 400px;
     }
 
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-content p {
-        font-size: 1rem;
-    }
-
-    #about {
-        margin-top: 1rem;
-    }
-}
-
-.video-background video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-@media (max-width: 768px) {
-    #hero {
-        height: 50vh;
-    }
-
     .hero-content {
         left: 5%;
         max-width: 90%;
@@ -432,82 +486,8 @@ footer {
     .hero-content p {
         font-size: 0.9rem;
     }
-}
 
-.menu-icon {
-    display: none;
-    font-size: 30px;
-    cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-    .menu-icon {
-        display: block;
-        position: fixed;
-        top: 10px;
-        left: 10px;
-        z-index: 1000;
+    #about {
+        margin-top: 1rem;
     }
-
-    #main-nav {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background: var(--accent-color);
-        padding: 20px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    #main-nav.show {
-        display: block;
-    }
-
-    .nav-item {
-        margin-bottom: 10px;
-    }
-
-    .nav-item a {
-        display: flex;
-        align-items: center;
-    }
-
-    .nav-item lord-icon {
-        vertical-align: middle;
-        margin-right: 5px;
-    }
-}
-
-/* Glassmorphism card effect */
-.card {
-    backdrop-filter: blur(16px) saturate(183%);
-    -webkit-backdrop-filter: blur(16px) saturate(183%);
-    background-color: rgba(17, 25, 40, 0.62);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.125);
-    box-shadow: 0px 4px 5px 0px var(--shadow-color),
-                0px 1px 8px 0px var(--shadow-color),
-                0px 2px 4px -1px var(--shadow-color);
-}
-.download-cv-btn {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--accent-color);
-    color: var(--text-color);
-    padding: 10px 20px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px var(--shadow-color);
-    z-index: 10;
-}
-
-.download-cv-btn:hover {
-    background-color: var(--primary-hover-color);
-    box-shadow: 0 6px 8px var(--shadow-color);
-    transform: translateX(-50%) translateY(-3px);
 }
