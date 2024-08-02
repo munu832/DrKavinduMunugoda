@@ -407,10 +407,11 @@ footer {
         align-items: center;
     }
 
-    .nav-item lord-icon {
-        vertical-align: middle;
-        margin-right: 5px;
-    }
+lord-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
 
     main {
         padding-top: 120px;
