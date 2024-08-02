@@ -4,9 +4,9 @@
     --primary-color: #8B4513;
     --primary-hover-color: #A0522D;
     --accent-color: #D2691E;
-    --text-color: #333;
-    --bg-color: #fafafa;
-    --card-bg-color: rgba(255, 255, 255, 0.1);
+    --text-color: #000000;
+    --bg-color: #F5DEB3;
+    --card-bg-color: #FAEBD7;
     --shadow-color: rgba(0, 0, 0, 0.1);
     --lord-icon-primary: #3498db;
     --lord-icon-secondary: #2ecc71;
@@ -16,9 +16,9 @@
     --primary-color: #4B0082;
     --primary-hover-color: #8A2BE2;
     --accent-color: #9370DB;
-    --text-color: #f8f8f8;
-    --bg-color: #212121;
-    --card-bg-color: rgba(0, 0, 0, 0.1);
+    --text-color: #FFFFFF;
+    --bg-color: #191970;
+    --card-bg-color: #483D8B;
     --shadow-color: rgba(255, 255, 255, 0.1);
     --lord-icon-primary: #ffffff;
     --lord-icon-secondary: #cccccc;
