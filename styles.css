@@ -32,14 +32,48 @@ body {
     color: var(--text-color);
     background-color: var(--bg-color);
     transition: background-color 0.3s, color 0.3s;
-    background-image: url('light-mode-bg.jpeg');
+    background-image: background-image: linear-gradient(
+  90deg,
+  hsl(240deg 7% 92%) 0%,
+  hsl(277deg 33% 92%) 16%,
+  hsl(320deg 71% 93%) 25%,
+  hsl(339deg 100% 93%) 33%,
+  hsl(1deg 100% 92%) 40%,
+  hsl(21deg 100% 87%) 46%,
+  hsl(34deg 100% 82%) 51%,
+  hsl(44deg 93% 78%) 57%,
+  hsl(61deg 63% 73%) 62%,
+  hsl(73deg 67% 73%) 68%,
+  hsl(86deg 70% 74%) 73%,
+  hsl(103deg 72% 76%) 78%,
+  hsl(124deg 74% 77%) 83%,
+  hsl(142deg 81% 72%) 88%,
+  hsl(156deg 86% 65%) 94%,
+  hsl(167deg 91% 52%) 100%
+);
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
 }
 
 body.darkmode {
-    background-image: url('dark-mode-bg.jpg');
+    background-image: background-image: linear-gradient(
+  325deg,
+  hsl(240deg 100% 20%) 0%,
+  hsl(304deg 100% 14%) 18%,
+  hsl(334deg 100% 16%) 28%,
+  hsl(350deg 100% 15%) 36%,
+  hsl(19deg 100% 13%) 43%,
+  hsl(34deg 75% 12%) 50%,
+  hsl(48deg 25% 13%) 57%,
+  hsl(53deg 15% 16%) 63%,
+  hsl(42deg 25% 20%) 69%,
+  hsl(34deg 33% 25%) 75%,
+  hsl(27deg 37% 30%) 81%,
+  hsl(19deg 37% 37%) 87%,
+  hsl(10deg 35% 45%) 93%,
+  hsl(0deg 36% 53%) 100%
+);
 }
 
 header {
