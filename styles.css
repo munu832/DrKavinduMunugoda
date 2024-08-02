@@ -317,7 +317,7 @@ social-links a {
 footer {
     text-align: center;
     padding: 2rem;
-    background-color: #5CAC8C;
+    background-color: var(--accent-color);
     color: var(--text-color);
 }
 
@@ -460,7 +460,7 @@ footer {
         top: 0;
         left: 0;
         width: 100%;
-        background: #f8f8f8;
+        background: var(--accent-color);
         padding: 20px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
