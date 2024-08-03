@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&family=Roboto:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Supreme:wght@300;400;500;700&display=swap");
 
 :root {
     --primary-color: #8B4513;
@@ -32,7 +32,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Supreme', sans-serif;
 }
 
 body {
@@ -173,6 +173,7 @@ main {
 }
 
 h1, h2, h3 {
+    font-family: 'Bebas Neue', sans-serif;
     margin-bottom: 1rem;
 }
 
