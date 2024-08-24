@@ -20,6 +20,17 @@ document.addEventListener('DOMContentLoaded', function() {
         createSkillsChart(ctx);
     }
 
+    window.addEventListener('load', function() {
+    const loadingScreen = document.getElementById('loading');
+    if (loadingScreen) {
+        loadingScreen.style.opacity = 0;
+        setTimeout(() => {
+            loadingScreen.style.display = 'none';
+        }, 500); // Adjust the delay as needed to match the transition time
+    }
+});
+
+
     // Fade-in effect
     const fadeElements = document.querySelectorAll('.fade-in');
     const fadeInOnScroll = () => {
