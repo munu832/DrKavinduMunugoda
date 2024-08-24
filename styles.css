@@ -572,7 +572,7 @@ lord-icon {
 
 /* Pulsing animation */
 #loading img {
-    width: 100px; /* Adjust size as needed */
+    width: 200px; /* Adjust size as needed */
     animation: pulse 1.5s infinite;
 }
 
