@@ -38,7 +38,13 @@
     <!-- Dimensions Badge script -->
     <script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
 </head>
+    
 <body>
+    <!-- Loading Screen -->
+    <div id="loading">
+        <img src="logo.jpeg" alt="Loading...">
+    </div>
+    
     <header>
         <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
         <nav id="main-nav">
@@ -49,7 +55,7 @@
                 <li class="nav-item"><a href="index.html#contact"><lord-icon src="https://cdn.lordicon.com/hcndxtmn.json" trigger="hover" colors="primary:var(--lord-icon-primary),secondary:var(--lord-icon-secondary)" style="width:24px;height:24px"></lord-icon>Contact</a></li>
             </ul>
         </nav>
-        <button id="theme-toggle" onclick="switchTheme()"><i class="fas fa-moon"></i> Dark Mode</button>
+        <button id="theme-toggle" onclick="switchTheme()"><i class="fas fa-moon"></i>Dark Mode</button>
     </header>
 
     <main>
