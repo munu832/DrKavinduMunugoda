@@ -75,7 +75,7 @@ function setup() {
   for (const program of programs) {
     const position = gl.getAttribLocation(program, "position");
     gl.enableVertexAttribArray(position);
-gl.vertexAttribPointer(position, 2, gl.FLOAT, false, 0, 0);
+    gl.vertexAttribPointer(position, 2, gl.FLOAT, false, 0, 0);
     program.resolution = gl.getUniformLocation(program, "resolution");
     program.time = gl.getUniformLocation(program, "time");
   }
@@ -129,7 +129,7 @@ function hookEvents() {
         e.target.matches(".next") && slider.append(items[0]);
         e.target.matches(".prev") && slider.prepend(items[items.length - 1]);
         removeCanvas();
-        document.querySelectorAll(".slide .more use").forEach((p) => p.setAttribute("xlink:href", "#play"));
+        document.querySelectorAll(".slide .more use").forEach((p) => p.setAttribute("href", "#play"));
       }, running ? 1000 : 0);
     }
   }
@@ -186,7 +186,7 @@ function setupPlayButton() {
         button.addEventListener("click", (e) => {
             const slide = e.target.closest(".slide");
             running = !running;
-            button.querySelector("use").setAttribute("xlink:href", running ? "#pause" : "#play");
+            button.querySelector("use").setAttribute("href", running ? "#pause" : "#play");
             if (!running) {
                 setXOff(slider, 0);
                 if (slide.classList.contains('youtube-slide')) {
@@ -272,37 +272,31 @@ function renderBackground(slide) {
   slide.classList.toggle("rerendered");
 }
 
-function size(width, height) {
-  canvas.width = width;
-  canvas.height = height;
-  gl.viewport(0, 0, width, height);
+function sizeCanvas() {
+    const s = Math.min(1600, 0.8 * Math.max(innerWidth, innerHeight));
+    const [w, h] = [canvas.width, canvas.height] = [s, s];
+    canvas.style.width = `${w}px`;
+    canvas.style.height = `${h}px`;
 }
 
 function resizeInner() {
-  const { innerWidth: width, innerHeight: height } = window;
-  size(width * dpr, height * dpr);
+    const main = document.querySelector("main");
+    const h = 0.9 * Math.max(320, Math.min(innerHeight, main.clientHeight));
+    const w = main.clientWidth;
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.width = `${w}px`;
+    canvas.style.height = `${h}px`;
+    sizeCanvas();
 }
 
 function resize() {
-  const { width, height } = window.screen;
-  size(width * dpr, height * dpr);
+  resizeInner();
+  for (const program of programs) {
+    gl.useProgram(program);
+    gl.uniform2f(program.resolution, canvas.width, canvas.height);
+  }
 }
 
-window.onresize = () => {
-  resizeInner();
-  if (running) return;
-  document.querySelectorAll(".slide").forEach((slide) => {
-    if (slide.querySelector("canvas")) {
-      running = true;
-      loop(0, slide.dataset.shaderIndex);
-      running = false;
-    }
-  });
-};
-
-window.onorientationchange = async () => {
-  resize();
-  await regenerateImagesWithFullResolution(true);
-};
-
-window.addEventListener("load", async () => await init());
+window.addEventListener("resize", resize);
+init();
