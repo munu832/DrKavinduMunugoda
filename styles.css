@@ -15,17 +15,17 @@
 }
 
 .darkmode {
-    --primary-color: #4B0082;
+    --primary-color: #1a1a1a;
     --secondary-color: #222;
-    --primary-hover-color: #8A2BE2;
-    --accent-color: #9370DB;
+    --primary-hover-color: #333333;
+    --accent-color: #4d4d4d;
     --text-color: #FFFFFF;
-    --link-color: #66b3ff;
-    --bg-color: #191970;
-    --card-bg-color: #483D8B;
+    --link-color: #808080;
+    --bg-color: #000000;
+    --card-bg-color: #0d0d0d;
     --shadow-color: rgba(255, 255, 255, 0.1);
     --lord-icon-primary: #ffffff;
-    --lord-icon-secondary: #cccccc;
+    --lord-icon-secondary: #a6a6a6;
 }
 
 * {
