@@ -521,3 +521,35 @@ lord-icon {
     text-decoration: none;
     color: var(--text-color);
 }
+
+.read-more {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: var(--primary-hover-color);
+}
+
+.social-share {
+    margin-top: 0.5rem;
+}
+
+.social-share span {
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.social-share a {
+    color: var(--text-color);
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-share a:hover {
+    color: var(--primary-hover-color);
+}
