@@ -179,64 +179,75 @@ function hookEvents() {
     }
   });
 
-  function setupPlayButton() {
+function setupPlayButton() {
     const listItems = document.querySelectorAll(".slide");
     for (const item of listItems) {
-      const button = item.querySelector(".more");
-      button.addEventListener("click", (e) => {
-        const slide = e.target.closest(".slide");
-        running = !running;
-        button.querySelector("use").setAttribute("xlink:href", running ? "#pause" : "#play");
-        if (!running) {
-          setXOff(slider, 0);
-          return;
-        }
-        setXOff(slider, 100);
-        if (slide.querySelector("canvas")) {
-          running = true;
-          loop(0, slide.dataset.shaderIndex);
-        } else {
-          animate(slide);
-        }
-      });
+        const button = item.querySelector(".more");
+        button.addEventListener("click", (e) => {
+            const slide = e.target.closest(".slide");
+            running = !running;
+            button.querySelector("use").setAttribute("xlink:href", running ? "#pause" : "#play");
+            if (!running) {
+                setXOff(slider, 0);
+                if (slide.classList.contains('youtube-slide')) {
+                    youtubePlayer.pauseVideo();
+                }
+                return;
+            }
+            setXOff(slider, 100);
+            if (slide.classList.contains('youtube-slide')) {
+                youtubePlayer.playVideo();
+            } else if (slide.querySelector("canvas")) {
+                running = true;
+                loop(0, slide.dataset.shaderIndex);
+            } else {
+                animate(slide);
+            }
+        });
     }
-  }
-
+}
+    
   setupPlayButton();
 }
 
 function animate(slide) {
-  const shaderIndex = slide.dataset.shaderIndex;
-  const visual = slide.querySelector(".visual");
-  resizeInner();
-  running = true;
-  loop(0, shaderIndex);
-  visual.append(canvas);
+    if (slide.classList.contains('youtube-slide')) {
+        youtubePlayer.playVideo();
+    } else {
+        const shaderIndex = slide.dataset.shaderIndex;
+        const visual = slide.querySelector(".visual");
+        resizeInner();
+        running = true;
+        loop(0, shaderIndex);
+        visual.append(canvas);
+    }
 }
 
 async function init() {
-  console.clear();
-  hookEvents();
-  setup();
-  resize();
+    console.clear();
+    hookEvents();
+    setup();
+    resize();
 
-  return new Promise((resolve) => {
-    for (let i = 0; i < programs.length; i++) {
-      if (i > 1) {
-        dpr = Math.max(1, 0.25 * window.devicePixelRatio);
-        resize();
-      }
-      draw(0, programs[i]);
-      const img = canvas.toDataURL();
-      const slide = document.querySelectorAll(".slide")[i];
-      slide.style.backgroundImage = `url(${img})`;
-      slide.dataset.shaderIndex = i;
-      slide.dataset.rerendered = `${canvas.width}x${canvas.height}`;
-    }
-    dpr = Math.max(1, window.devicePixelRatio);
-    setTimeout(async () => await regenerateImagesWithFullResolution(), 2000);
-    resolve();
-  });
+    return new Promise((resolve) => {
+        for (let i = 0; i < programs.length; i++) {
+            if (i > 1) {
+                dpr = Math.max(1, 0.25 * window.devicePixelRatio);
+                resize();
+            }
+            const slide = document.querySelectorAll(".slide")[i];
+            if (!slide.classList.contains('youtube-slide')) {
+                draw(0, programs[i]);
+                const img = canvas.toDataURL();
+                slide.style.backgroundImage = `url(${img})`;
+                slide.dataset.shaderIndex = i;
+                slide.dataset.rerendered = `${canvas.width}x${canvas.height}`;
+            }
+        }
+        dpr = Math.max(1, window.devicePixelRatio);
+        setTimeout(async () => await regenerateImagesWithFullResolution(), 2000);
+        resolve();
+    });
 }
 
 async function regenerateImagesWithFullResolution(all = false) {
