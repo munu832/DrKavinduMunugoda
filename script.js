@@ -125,3 +125,13 @@ function toggleMenu() {
     var nav = document.getElementById("main-nav");
     nav.classList.toggle("show");
 }
+
+window.addEventListener('load', function() {
+    const loadingScreen = document.getElementById('loading');
+    if (loadingScreen) {
+        loadingScreen.style.opacity = 0;
+        setTimeout(() => {
+            loadingScreen.style.display = 'none';
+        }, 500); // Delay matches the transition duration
+    }
+});
