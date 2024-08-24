@@ -1,5 +1,34 @@
 let dpr = Math.max(1, window.devicePixelRatio);
 
+// Load YouTube IFrame API
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+let youtubePlayer;
+
+function onYouTubeIframeAPIReady() {
+    youtubePlayer = new YT.Player('youtube-player', {
+        height: '100%',
+        width: '100%',
+        videoId: 'YOUR_VIDEO_ID', // Replace with your YouTube video ID
+        playerVars: {
+            'playsinline': 1,
+            'controls': 0,
+            'rel': 0,
+            'showinfo': 0
+        },
+        events: {
+            'onReady': onPlayerReady
+        }
+    });
+}
+
+function onPlayerReady(event) {
+    // Video is ready to play
+}
+
 const vertexSource = `#version 300 es
 precision highp float;
 in vec4 position;
