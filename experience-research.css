@@ -194,40 +194,49 @@ main {
   transition: background 0s;
 }
 
-@media (min-width: 651px) and (max-width: 899px) {
-  .content .title {
-    font-size: 1rem;
-  }
+.youtube-slide .visual {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
 
-  .content .description {
-    font-size: 0.7rem;
-  }
+#youtube-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
-  .content button {
-    font-size: 0.7rem;
-  }
+#fullscreen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .slide {
-    width: 160px;
-    height: 270px;
-  }
+#fullscreen-overlay iframe {
+  width: 90%;
+  height: 90%;
+}
 
-  .slide:nth-child(3) {
-    left: calc(var(--x-off) + 50%);
-  }
-
-  .slide:nth-child(4) {
-    left: calc(var(--x-off) + 50% + 170px);
-  }
-
-  .slide:nth-child(5) {
-    left: calc(var(--x-off) + 50% + 340px);
-  }
-
-  .slide:nth-child(6) {
-    left: calc(var(--x-off) + 50% + 510px);
-    opacity: 0;
-  }
+#fullscreen-overlay .close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
 }
 
 @media (max-width: 650px) {
@@ -264,18 +273,4 @@ main {
     left: calc(var(--x-off) + 50% + 420px);
     opacity: 0;
   }
-}
-
-.youtube-slide .visual {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-#youtube-player {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 }
