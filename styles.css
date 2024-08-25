@@ -346,7 +346,7 @@ footer {
 }
 
 #theme-toggle {
-    background-color: var(--link-color);
+    background-color: var(--secondary-color);
     color: var(--text-color);
     border: none;
     padding: 0.5rem 1rem;
