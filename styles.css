@@ -597,7 +597,7 @@ lord-icon {
 }
 
 .publication .altmetric-embed {
-    transform: translateY(-2px); /* Adjust this value as needed */
+    transform: translateY(4px); /* Adjust this value as needed */
 }
 
 .publication .read-more {
