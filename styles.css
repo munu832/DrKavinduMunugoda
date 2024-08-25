@@ -568,12 +568,12 @@ lord-icon {
     z-index: 9999;
     opacity: 1;
     transition: opacity 0.5s ease-out;
-    border-radius: 20px;
 }
 
 /* Pulsing animation */
 #loading img {
     width: 200px; 
+    border-radius: 20px;
     animation: pulse 1.5s infinite;
 }
 
