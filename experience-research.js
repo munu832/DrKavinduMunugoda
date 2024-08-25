@@ -6,22 +6,25 @@ tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-let youtubePlayer;
+let youtubePlayers = [];
+const videoIds = ['q-lVfEwMxHI', 'x-sdfghjkhg', 'x-sdfghjkbvc'];
 
 function onYouTubeIframeAPIReady() {
-    youtubePlayer = new YT.Player('youtube-player', {
-        height: '100%',
-        width: '100%',
-        videoId: 'YOUR_VIDEO_ID', // Replace with your YouTube video ID
-        playerVars: {
-            'playsinline': 1,
-            'controls': 0,
-            'rel': 0,
-            'showinfo': 0
-        },
-        events: {
-            'onReady': onPlayerReady
-        }
+    videoIds.forEach((videoId, index) => {
+        youtubePlayers[index] = new YT.Player(`youtube-player-${index}`, {
+            height: '100%',
+            width: '100%',
+            videoId: videoId, 
+            playerVars: {
+                'playsinline': 1,
+                'controls': 0,
+                'rel': 0,
+                'showinfo': 0
+            },
+            events: {
+                'onReady': onPlayerReady
+            }
+        });
     });
 }
 
@@ -179,9 +182,13 @@ function hookEvents() {
     }
   });
 
+  setupPlayButton();
+}
+
 function setupPlayButton() {
     const listItems = document.querySelectorAll(".slide");
-    for (const item of listItems) {
+    for (let i = 0; i < listItems.length; i++) {
+        const item = listItems[i];
         const button = item.querySelector(".more");
         button.addEventListener("click", (e) => {
             const slide = e.target.closest(".slide");
@@ -190,13 +197,13 @@ function setupPlayButton() {
             if (!running) {
                 setXOff(slider, 0);
                 if (slide.classList.contains('youtube-slide')) {
-                    youtubePlayer.pauseVideo();
+                    youtubePlayers[i].pauseVideo();
                 }
                 return;
             }
             setXOff(slider, 100);
             if (slide.classList.contains('youtube-slide')) {
-                youtubePlayer.playVideo();
+                youtubePlayers[i].playVideo();
             } else if (slide.querySelector("canvas")) {
                 running = true;
                 loop(0, slide.dataset.shaderIndex);
@@ -206,13 +213,11 @@ function setupPlayButton() {
         });
     }
 }
-    
-  setupPlayButton();
-}
 
 function animate(slide) {
     if (slide.classList.contains('youtube-slide')) {
-        youtubePlayer.playVideo();
+        const index = Array.from(slide.parentNode.children).indexOf(slide);
+        youtubePlayers[index].playVideo();
     } else {
         const shaderIndex = slide.dataset.shaderIndex;
         const visual = slide.querySelector(".visual");
