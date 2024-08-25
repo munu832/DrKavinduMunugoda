@@ -587,10 +587,21 @@ lord-icon {
 .publication .badge-container {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.publication .badge-container > * {
+    display: flex;
+    align-items: center;
+}
+
+.publication .altmetric-embed {
+    transform: translateY(-2px); /* Adjust this value as needed */
 }
 
 .publication .read-more {
-    margin-left: 15px;
+    margin-left: auto;
 }
 
 .publication .social-share {
@@ -598,5 +609,8 @@ lord-icon {
     margin-top: 10px;
 }
 
+.publication .social-share a {
+    margin-left: 5px;
+}
 
 
