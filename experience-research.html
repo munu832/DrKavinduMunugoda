@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Kavindu Munugoda - Experience & Research</title>
-    <link rel="stylesheet" href="experience-research.css">
+    <link rel="stylesheet" href="styles.css">
     <meta name="description" content="Dr. Kavindu Munugoda's experience and research in sustainable forest management and plant biotechnology.">
 </head>
 <body>
@@ -104,20 +104,6 @@
         <path id="pause" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M176 96h16v320h-16zM320 96h16v320h-16z" />
     </svg>
 
-    <script type="x-shader/x-fragment" data-title="Research Topic 1">
-        #version 300 es
-        precision highp float;
-        out vec4 fragColor;
-        uniform vec2 resolution;
-        uniform float time;
-        
-        void main() {
-            vec2 uv = gl_FragCoord.xy / resolution.xy;
-            vec3 col = 0.5 + 0.5 * cos(time + uv.xyx + vec3(0,2,4));
-            fragColor = vec4(col, 1.0);
-        }
-    </script>
-
-    <script src="experience-research.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
