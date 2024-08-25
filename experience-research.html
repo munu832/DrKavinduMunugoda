@@ -5,16 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Kavindu Munugoda - Experience & Research</title>
     <link rel="stylesheet" href="experience-research.css">
-    <!-- Added meta description for SEO -->
     <meta name="description" content="Dr. Kavindu Munugoda's experience and research in sustainable forest management and plant biotechnology.">
 </head>
 <body>
     <main>
         <ul class="slider">
-            <!-- Corrected YouTube video embedding using iframe -->
             <li class="slide youtube-slide">
                 <div class="visual">
-                    <iframe width="560" height="315" src="https://www.youtube.com/shorts/q-lVfEwMxHI" frameborder="0" allowfullscreen></iframe>
+                    <div id="youtube-player"></div>
                 </div>
                 <div class="content">
                     <h2 class="title">FSC Internal Audits: Lalan Plantations 2023</h2>
@@ -29,9 +27,53 @@
                     </button>
                 </div>
             </li>
+            <li class="slide">
+                <div class="visual"></div>
+                <div class="content">
+                    <h2 class="title">Research Topic 1</h2>
+                    <p class="description">Description of research topic 1...</p>
+                    <button class="more ripple" aria-label="Play Animation">
+                        <div class="icon" role="button">
+                            <svg viewBox="0 0 512 512">
+                                <title>Play Animation</title>
+                                <use href="#play"></use>
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+            </li>
+            <li class="slide">
+                <div class="visual"></div>
+                <div class="content">
+                    <h2 class="title">Research Topic 2</h2>
+                    <p class="description">Description of research topic 2...</p>
+                    <button class="more ripple" aria-label="Play Animation">
+                        <div class="icon" role="button">
+                            <svg viewBox="0 0 512 512">
+                                <title>Play Animation</title>
+                                <use href="#play"></use>
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+            </li>
+            <li class="slide">
+                <div class="visual"></div>
+                <div class="content">
+                    <h2 class="title">Research Topic 3</h2>
+                    <p class="description">Description of research topic 3...</p>
+                    <button class="more ripple" aria-label="Play Animation">
+                        <div class="icon" role="button">
+                            <svg viewBox="0 0 512 512">
+                                <title>Play Animation</title>
+                                <use href="#play"></use>
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+            </li>
         </ul>
         
-        <!-- Navigation with improved accessibility -->
         <nav class='nav'>
             <div class="btn ripple prev" aria-label="Previous Slide">
                 <div class="icon" role="button">
@@ -52,14 +94,12 @@
         </nav>
     </main>
 
-    <!-- Inline SVG with accessibility titles -->
     <svg style="display: none;">
         <title>Control Icons</title>
         <path id="play" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M190.06 414l163.12-139.78a24 24 0 000-36.44L190.06 98c-15.57-13.34-39.62-2.28-39.62 18.22v279.6c0 20.5 24.05 31.56 39.62 18.18z" />
         <path id="pause" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M176 96h16v320h-16zM320 96h16v320h-16z" />
     </svg>
 
-    <!-- WebGL Shader scripts should be loaded by WebGL JavaScript, keeping as is if you handle them in experience-research.js -->
     <script type="x-shader/x-fragment" data-title="Research Topic 1">
         #version 300 es
         precision highp float;
@@ -104,7 +144,6 @@
         }
     </script>
 
-    <!-- Deferred loading of JavaScript for better performance -->
     <script src="experience-research.js" defer></script>
 </body>
 </html>
