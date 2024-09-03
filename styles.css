@@ -613,4 +613,59 @@ lord-icon {
     margin-left: 5px;
 }
 
+/* Dashboards section styling */
+.dashboards-section {
+    padding: 3rem 1rem;
+    background-color: var(--section-bg-color);
+}
 
+/* Dashboard item styling */
+.dashboard {
+    background-color: var(--card-bg-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.dashboard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px var(--shadow-color);
+}
+
+/* Dashboard title and link styling */
+.dashboard h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.dashboard p {
+    margin-bottom: 1rem;
+}
+
+.dashboard-link {
+    text-decoration: none;
+    color: var(--link-color);
+    font-weight: bold;
+    border: 2px solid var(--link-color);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dashboard-link:hover {
+    background-color: var(--link-hover-bg-color);
+    color: var(--link-hover-color);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .dashboard {
+        padding: 1rem;
+    }
+
+    .dashboard h3 {
+        font-size: 1.25rem;
+    }
+}
