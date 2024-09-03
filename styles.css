@@ -269,6 +269,7 @@ h2 lord-icon {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto 2rem auto;
+    position: relative;
 }
 
 .publication {
@@ -629,6 +630,7 @@ lord-icon {
     box-shadow: 0 4px 6px var(--shadow-color);
 }
 
+/* Hover effect for dashboard items */
 .dashboard:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 8px var(--shadow-color);
@@ -659,7 +661,7 @@ lord-icon {
     color: var(--link-hover-color);
 }
 
-/* Responsive design */
+/* Responsive design adjustments */
 @media (max-width: 768px) {
     .dashboard {
         padding: 1rem;
