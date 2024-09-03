@@ -614,19 +614,13 @@ lord-icon {
     margin-left: 5px;
 }
 
-/* Dashboards section styling */
-.dashboards-section {
-    padding: 3rem 1rem;
-    background-color: var(--section-bg-color);
-}
-
 /* Dashboard item styling */
 .dashboard {
     background-color: var(--card-bg-color);
     padding: 1.5rem;
     border-radius: 8px;
     margin-bottom: 1.5rem;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 6px var(--shadow-color);
 }
 
