@@ -616,6 +616,7 @@ lord-icon {
 
 /* Dashboard item styling */
 .dashboard {
+    position: relative;
     background-color: var(--card-bg-color);
     padding: 1.5rem;
     border-radius: 8px;
@@ -632,12 +633,28 @@ lord-icon {
 
 /* Dashboard title and link styling */
 .dashboard h3 {
-    font-size: 1.5rem;
+    margin: 0 0 0.5rem;
+    text-align: left;
+    font-size: 1rem;
     margin-bottom: 0.5rem;
 }
 
+.dashboard ul {
+    padding-left: 20px; 
+    margin-bottom: 1.5rem;
+    list-style-type: disc;
+}
+
+.dashboard ul li {
+    margin-bottom: 0.5rem;
+    text-align: left; 
+}
 .dashboard p {
     margin-bottom: 1rem;
+}
+
+.dashboard-link-container {
+    text-align: right; 
 }
 
 .dashboard-link {
@@ -647,7 +664,7 @@ lord-icon {
     border: 2px solid var(--link-color);
     padding: 0.5rem 1rem;
     border-radius: 8px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;    
 }
 
 .dashboard-link:hover {
@@ -662,6 +679,6 @@ lord-icon {
     }
 
     .dashboard h3 {
-        font-size: 1.25rem;
+        font-size: 1rem;
     }
 }
