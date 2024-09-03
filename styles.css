@@ -602,6 +602,13 @@ lord-icon {
 }
 
 .publication .read-more {
+    text-decoration: none;
+    color: var(--link-color);
+    font-weight: bold;
+    border: 2px solid var(--link-color);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
     margin-left: auto;
 }
 
