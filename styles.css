@@ -626,7 +626,7 @@ lord-icon {
     padding: 1.5rem;
     border-radius: 8px;
     margin-bottom: 1.5rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
     box-shadow: 0 4px 6px var(--shadow-color);
 }
 
