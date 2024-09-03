@@ -642,7 +642,7 @@ lord-icon {
 .dashboard h3 {
     margin: 0 0 0.5rem;
     text-align: left;
-    font-size: 1rem;
+    font-size: 1.25rem;
     margin-bottom: 0.5rem;
 }
 
@@ -686,6 +686,6 @@ lord-icon {
     }
 
     .dashboard h3 {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 }
