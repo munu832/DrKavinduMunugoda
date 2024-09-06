@@ -5,7 +5,7 @@ var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 let youtubePlayers = [];
-const videoIds = ['q-lVfEwMxHI', 'x-sdfghjkhg', 'x-sdfghjkbvc', 'dQw4w9WgXcQ']; // Replace with your actual video IDs
+const videoIds = ['q-lVfEwMxHI', 'toJBBETx3bY']; // Replace with your actual video IDs
 
 function onYouTubeIframeAPIReady() {
     videoIds.forEach((videoId, index) => {
