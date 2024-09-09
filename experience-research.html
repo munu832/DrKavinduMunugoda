@@ -3,79 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Kavindu Munugoda - Experience & Research</title>
-    <link rel="stylesheet" href="experience-research.css">
-    <meta name="description" content="Dr. Kavindu Munugoda's experience and research in sustainable forest management and plant biotechnology.">
+    <title>Video Showcase</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Quicksand:wght@300..700&display=swap");
+
+        *,
+        *:before,
+        *:after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Quicksand", sans-serif;
+        }
+
+        body {
+            background: linear-gradient(145deg, #55566a 0%, #131318 76%);
+            color: #c7c7c7c9;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main {
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-family: "Dancing Script", cursive;
+            font-size: clamp(2.5rem, 4vw, 4rem);
+            font-weight: 700;
+            background: -webkit-linear-gradient(0deg, #f76591, #ffc16f);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .stack {
+            position: relative;
+            width: 315px; /* Adjusted for YouTube Shorts aspect ratio */
+            height: 560px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: transform 0.6s, opacity 0.6s;
+            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.25),
+                0 15px 20px 0 rgba(0, 0, 0, 0.125);
+        }
+
+        .card iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .card:nth-child(1) { transform: translateY(0) scale(1); z-index: 5; }
+        .card:nth-child(2) { transform: translateY(7%) scale(0.95); z-index: 4; }
+        .card:nth-child(3) { transform: translateY(14%) scale(0.9); z-index: 3; }
+        .card:nth-child(4) { transform: translateY(21%) scale(0.85); z-index: 2; }
+        .card:nth-child(n+5) { transform: translateY(28%) scale(0.8); z-index: 1; opacity: 0; }
+
+        .nav {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .btn {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.2s ease-in;
+        }
+
+        .btn svg {
+            width: 24px;
+            height: 24px;
+            fill: #ffffff;
+        }
+
+        .btn:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .stack {
+                width: 270px;
+                height: 480px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <main>
-        <ul class="slider">
-            <li class="slide youtube-slide">
-                <div class="visual">
-                    <div id="youtube-player-0"></div>
-                </div>
-                <div class="content">
-                    <h2 class="title">FSC Internal Audits: Lalan Plantations 2023</h2>
-                    <p class="description">A field trip to Lalan Plantations, where I explore the intricate process of FSC (Forest Stewardship Council) internal audits.</p>
-                    <button class="more ripple" aria-label="Play FSC Internal Audits Video">
-                        <div class="icon" role="button">
-                            <svg viewBox="0 0 512 512">
-                                <title>Play Video</title>
-                                <use href="#play"></use>
-                            </svg>
-                        </div>
-                    </button>
-                </div>
-            </li>
-            <li class="slide youtube-slide">
-                <div class="visual">
-                    <div id="youtube-player-1"></div>
-                </div>
-                <div class="content">
-                    <h2 class="title">Agar Wood Plantation Consultancy | Peth (PVT) Ltd., Welipenna, Sri Lanka (2023)</h2>
-                    <p class="description">Consultancy project with Peth PVT Ltd Agar Wood Plantation, located in Welipenna, Sri Lanka. This 2023 project covers sustainable practices, plantation management, and growth strategies for producing high-quality Agarwood, a valuable resource in perfumery and traditional medicine.</p>
-                    <button class="more ripple" aria-label="Play Research Video 2">
-                        <div class="icon" role="button">
-                            <svg viewBox="0 0 512 512">
-                                <title>Play Video</title>
-                                <use href="#play"></use>
-                            </svg>
-                        </div>
-                    </button>
-                </div>
-            </li>
-            <li class="slide youtube-slide">
-                <div class="visual">
-                    <div id="youtube-player-1"></div>
-                </div>
-        
-        <nav class='nav'>
-            <div class="btn ripple prev" aria-label="Previous Slide">
-                <div class="icon" role="button">
-                    <svg viewBox="0 0 512 512">
-                        <title>Previous Slide</title>
-                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M244 400L100 256l144-144M120 256h292"></path>
-                    </svg>
-                </div>
+    <main role="main">
+        <h1 id="videoTitle">Video Showcase</h1>
+        <div class="stack">
+            <div class="card" data-video-id="toJBBETx3bY" data-title="FSC Internal Audits: Lalan Plantations 2023">
+                <iframe src="https://www.youtube.com/embed/q-lVfEwMxHI" allowfullscreen></iframe>
             </div>
-            <div class='btn ripple next' aria-label="Next Slide">
-                <div class="icon" role="button">
-                    <svg viewBox="0 0 512 512">
-                        <title>Next Slide</title>
-                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M268 112l144 144-144 144M392 256H100"></path>
-                    </svg>
-                </div>
+            <div class="card" data-video-id="q-lVfEwMxHI" data-title="Agarwood Plantation Consultancy | Peth PVT Ltd">
+                <iframe src="https://www.youtube.com/embed/toJBBETx3bY" allowfullscreen></iframe>
             </div>
-        </nav>
+            <!-- Add more video cards here -->
+        </div>
+        <div class="nav">
+            <button class="btn prev" aria-label="Previous Slide">
+                <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+            </button>
+            <button class="btn next" aria-label="Next Slide">
+                <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            </button>
+        </div>
     </main>
+    <script>
+        const stack = document.querySelector(".stack");
+        const cards = Array.from(stack.children);
+        const prevBtn = document.querySelector(".prev");
+        const nextBtn = document.querySelector(".next");
+        const videoTitle = document.getElementById("videoTitle");
 
-    <svg style="display: none;">
-        <title>Control Icons</title>
-        <path id="play" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M190.06 414l163.12-139.78a24 24 0 000-36.44L190.06 98c-15.57-13.34-39.62-2.28-39.62 18.22v279.6c0 20.5 24.05 31.56 39.62 18.18z" />
-        <path id="pause" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M176 96h16v320h-16zM320 96h16v320h-16z" />
-    </svg>
+        let currentIndex = 0;
 
-    <script src="https://www.youtube.com/iframe_api"></script>
-    <script src="experience-research.js" defer></script>
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function moveCard(direction) {
+            currentIndex = (currentIndex + direction + cards.length) % cards.length;
+            updateCardPositions();
+            updateTitle();
+        }
+
+        function updateCardPositions() {
+            cards.forEach((card, index) => {
+                const position = (index - currentIndex + cards.length) % cards.length;
+                card.style.transform = `translateY(${position * 7}%) scale(${1 - position * 0.05})`;
+                card.style.zIndex = cards.length - position;
+                card.style.opacity = position < 4 ? 1 : 0;
+            });
+        }
+
+        function updateTitle() {
+            const currentCard = cards[currentIndex];
+            videoTitle.textContent = currentCard.dataset.title;
+        }
+
+        prevBtn.addEventListener("click", () => moveCard(-1));
+        nextBtn.addEventListener("click", () => moveCard(1));
+
+        // Shuffle the cards
+        shuffleArray(cards);
+        cards.forEach(card => stack.appendChild(card));
+
+        // Initialize card positions and title
+        updateCardPositions();
+        updateTitle();
+    </script>
 </body>
 </html>
