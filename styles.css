@@ -686,3 +686,29 @@ lord-icon {
         font-size: 1.5rem;
     }
 }
+
+/* Publications page mobile tweaks */
+.publications-section { padding: 1rem; }
+.pub-toolbar { display:flex; flex-wrap:wrap; gap:.6rem; }
+.pub-toolbar input { flex: 1 1 260px; min-width: 0; }
+.pub-toolbar button { white-space: nowrap; }
+
+.pub-section h3 { margin: 1.2rem 0 .6rem; font-size: 1.15rem; }
+.pub-card { padding: 0.9rem; border-radius: 14px; }
+.pub-card h4 { font-size: 1.02rem; }
+.meta { font-size: .95rem; line-height:1.4; }
+.badge-row { gap:.5rem; }
+.read-more { font-size: .9rem; padding:.35rem .6rem; }
+
+/* Dark mode card bg if you use body.darkmode */
+body.darkmode .pub-card { background: #16181b; }
+
+/* Mobile nav toggle (your header uses #main-nav.open) */
+#main-nav { transition: max-height .25s ease; overflow:hidden; max-height:0; }
+#main-nav.open { max-height: 420px; }  /* enough to show all items on phones */
+#main-nav ul { display:flex; flex-direction:column; gap:.2rem; }
+@media (min-width: 768px) {
+  #main-nav { max-height: none; overflow: visible; }
+  #main-nav ul { flex-direction: row; gap: .6rem; }
+}
+
