@@ -47,13 +47,13 @@ const PUBS = {
       note: "Preprint"
     },
     {
-      title: "Green innovations: Production and evaluation of mosquito repellents from Ocimum tenuiflorum L. subtypes Rama and Krishna and Ocimum gratissimum L.",
+      title: "Refining Nature’s Defense: Production and Evaluation of Mosquito Repellents from Ocimum tenuiflorum L. (Krishna and Rama Subtypes) and Ocimum gratissimum L. Essential Oils",
       authors: "Munugoda, K. D.; Hapugoda, M. D.; Subasinghe, S. M. C. U. P.; Hettiarachchi, D. S.",
-      venue: "Preprint server",
-      year: 2024,
-      doi: null,                     // you said DOI pending; keeping this blank to avoid false info
-      link: null,
-      note: "Preprint (DOI pending)"
+      venue: "ChemRxiv",
+      year: 2025,
+      doi: 10.26434/chemrxiv-2025-5l0v3,                     
+      link: https://doi.org/10.26434/chemrxiv-2025-5l0v3,
+      note: "Preprint"
     }
   ],
 
