@@ -1,0 +1,227 @@
+/* ===== PUBLICATIONS PAGE SPECIFIC STYLES ===== */
+.publication-section {
+    margin-bottom: 3rem;
+}
+
+.publication-section h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.publication {
+    background-color: var(--card-bg-color);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.publication:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--shadow-color);
+}
+
+.publication h4 {
+    font-family: 'Supreme', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+}
+
+.publication p {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    opacity: 0.9;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.publication p strong {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.publication em {
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* Badge container styling for publications page */
+.publication .badge-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 1.2rem 0;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Dimensions badge specific styling */
+.publication .__dimensions_badge_embed__ {
+    display: inline-block;
+}
+
+/* Altmetric badge specific styling */
+.publication .altmetric-embed {
+    display: inline-block;
+}
+
+/* Read more link styling */
+.publication .read-more {
+    display: inline-block;
+    background-color: var(--link-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    margin-left: auto;
+}
+
+.publication .read-more:hover {
+    background-color: var(--primary-hover-color);
+    transform: translateY(-2px);
+}
+
+/* Social share styling */
+.publication .social-share {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.publication .social-share span {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-right: 5px;
+}
+
+.publication .social-share a {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+
+.publication .social-share a:hover {
+    color: var(--primary-hover-color);
+    transform: scale(1.2);
+}
+
+/* Publications without badges (under review/preparation) */
+.publication:not(:has(.badge-container)) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Dark mode adjustments */
+body.darkmode .publication {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+body.darkmode .publication h4 {
+    color: #ffffff;
+}
+
+body.darkmode .publication p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+body.darkmode .publication .read-more {
+    background-color: var(--link-color);
+    color: #000000;
+}
+
+body.darkmode .publication .read-more:hover {
+    background-color: var(--primary-hover-color);
+    color: #ffffff;
+}
+
+/* Responsive design for publications page */
+@media (max-width: 768px) {
+    .publication-section h3 {
+        font-size: 1.5rem;
+    }
+    
+    .publication h4 {
+        font-size: 1rem;
+    }
+    
+    .publication .badge-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .publication .badge-container > * {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    
+    .publication .read-more {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .publication .social-share {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .publication .social-share span {
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .publication {
+        padding: 1rem;
+    }
+    
+    .publication-section {
+        margin-bottom: 2rem;
+    }
+    
+    .publication h4 {
+        font-size: 0.95rem;
+    }
+    
+    .publication p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Fix for badge alignment issues */
+.__dimensions_badge_embed__,
+.altmetric-embed {
+    vertical-align: middle !important;
+}
+
+/* Ensure badges don't overflow on mobile */
+@media (max-width: 768px) {
+    .__dimensions_badge_embed__ {
+        max-width: 100%;
+    }
+    
+    .altmetric-embed {
+        max-width: 100%;
+    }
+}
