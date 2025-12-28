@@ -113,10 +113,10 @@ function createSkillsChart(ctx) {
     new Chart(ctx, {
         type: 'radar',
         data: {
-            labels: ['Pharmacognosy', 'Phytochemistry', 'Ethnobotany', 'Chemical Ecology', 'Food Science', 'Citizen Science'],
+            labels: ['Pharmacognosy', 'Phytochemistry', 'Ethnobotany', 'Molecular\nVirology', 'Chemical\nEcology'],
             datasets: [{
                 label: 'Skills',
-                data: [90, 85, 80, 75, 70, 65],
+                data: [90, 85, 80, 75, 65],
                 backgroundColor: 'rgba(52, 152, 219, 0.2)',
                 borderColor: 'rgba(52, 152, 219, 1)',
                 pointBackgroundColor: 'rgba(52, 152, 219, 1)',
