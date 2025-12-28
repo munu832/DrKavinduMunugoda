@@ -7,6 +7,8 @@
     --accent-color: #D2691E;
     --text-color: #000000;
     --link-color: #0066cc;
+    --link-hover-bg-color: #0066cc;
+    --link-hover-color: #ffffff;
     --bg-color: #F5DEB3;
     --card-bg-color: #FAEBD7;
     --shadow-color: rgba(0, 0, 0, 0.1);
@@ -19,6 +21,8 @@
     --accent-color: #4d4d4d;
     --text-color: #FFFFFF;
     --link-color: #808080;
+    --link-hover-bg-color: #808080;
+    --link-hover-color: #000000;
     --bg-color: #000000;
     --card-bg-color: #0d0d0d;
     --shadow-color: rgba(255, 255, 255, 0.1);
@@ -208,25 +212,25 @@ h2 lord-icon {
     left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
-}
-
-#hero {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 60vh;
-    min-height: 400px;
-}
-
-.hero-content {
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    transform: translateY(-50%);
-    max-width: 50%;
     z-index: 1;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.video-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 #about {
@@ -356,35 +360,26 @@ footer {
     background-color: var(--primary-hover-color);
 }
 
-.video-background video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
+/* Download CV button - UPDATED POSITIONING */
 .download-cv-btn {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    display: block;
+    width: fit-content;
+    margin: 2rem auto;
     background-color: var(--accent-color);
     color: var(--text-color);
-    padding: 10px 20px;
+    padding: 12px 24px;
     border-radius: 25px;
     text-decoration: none;
     font-weight: bold;
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px var(--shadow-color);
-    z-index: 10;
+    text-align: center;
 }
 
 .download-cv-btn:hover {
     background-color: var(--primary-hover-color);
     box-shadow: 0 6px 8px var(--shadow-color);
-    transform: translateX(-50%) translateY(-3px);
+    transform: translateY(-3px);
 }
 
 .menu-icon {
@@ -426,11 +421,11 @@ footer {
         align-items: center;
     }
 
-lord-icon {
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 10px;
-}
+    lord-icon {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+    }
 
     main {
         padding-top: 120px;
@@ -489,28 +484,11 @@ lord-icon {
         gap: 1rem;
     }
 
-    #hero {
-        height: 70vh;
-        min-height: 400px;
-    }
-
-    .hero-content {
-        left: 5%;
-        max-width: 90%;
-    }
-
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-
-    .hero-content p {
-        font-size: 0.9rem;
-    }
-
     #about {
         margin-top: 1rem;
     }
 }
+
 #collapsible-nav .nav-item a {
     display: flex;
     align-items: center;
@@ -712,3 +690,518 @@ body.darkmode .pub-card { background: #16181b; }
   #main-nav ul { flex-direction: row; gap: .6rem; }
 }
 
+/* ===== HERO SECTION WITH CAROUSEL ===== */
+#hero {
+    min-height: 100vh;
+    min-height: 100dvh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.text-section {
+    flex: 1;
+    color: white;
+    max-width: 600px;
+}
+
+.text-section h1 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+.text-section p {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    line-height: 1.6;
+    opacity: 0.95;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+.expertise-tag {
+    display: inline-block;
+    margin: 4px 6px 4px 0;
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    font-size: clamp(0.8rem, 2vw, 0.95rem);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    white-space: nowrap;
+    color: white;
+}
+
+/* Carousel Styles */
+.carousel-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    min-width: 0;
+}
+
+.carousel-container {
+    width: 100%;
+    max-width: 450px;
+    height: 500px;
+    position: relative;
+    perspective: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-arrow {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 20;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    top: 50%;
+    transform: translateY(-50%);
+    touch-action: manipulation;
+    border: none;
+}
+
+.nav-arrow:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-50%) scale(1.15);
+}
+
+.nav-arrow.left {
+    left: -20px;
+}
+
+.nav-arrow.right {
+    right: -20px;
+}
+
+.nav-arrow svg {
+    width: 20px;
+    height: 20px;
+}
+
+.carousel-track {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.card {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card.center {
+    z-index: 10;
+    transform: scale(1.1) translateZ(0);
+}
+
+.card.center img {
+    filter: none;
+}
+
+.card.left-2 {
+    z-index: 1;
+    transform: translateX(-180px) scale(0.7) translateZ(-300px);
+    opacity: 0.5;
+}
+
+.card.left-2 img {
+    filter: grayscale(100%) brightness(0.7);
+}
+
+.card.left-1 {
+    z-index: 5;
+    transform: translateX(-90px) scale(0.85) translateZ(-100px);
+    opacity: 0.75;
+}
+
+.card.left-1 img {
+    filter: grayscale(80%) brightness(0.8);
+}
+
+.card.right-1 {
+    z-index: 5;
+    transform: translateX(90px) scale(0.85) translateZ(-100px);
+    opacity: 0.75;
+}
+
+.card.right-1 img {
+    filter: grayscale(80%) brightness(0.8);
+}
+
+.card.right-2 {
+    z-index: 1;
+    transform: translateX(180px) scale(0.7) translateZ(-300px);
+    opacity: 0.5;
+}
+
+.card.right-2 img {
+    filter: grayscale(100%) brightness(0.7);
+}
+
+.card.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.dots {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 25;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 90%;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    touch-action: manipulation;
+}
+
+.dot.active {
+    background: white;
+    transform: scale(1.3);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive Design for Carousel */
+@media (max-width: 1200px) {
+    .hero-content {
+        gap: 30px;
+        padding: 0 15px;
+    }
+    
+    .carousel-container {
+        height: 450px;
+        max-width: 400px;
+    }
+    
+    .card {
+        width: 280px;
+        height: 180px;
+    }
+    
+    .card.left-2 {
+        transform: translateX(-160px) scale(0.7) translateZ(-300px);
+    }
+    
+    .card.left-1 {
+        transform: translateX(-80px) scale(0.85) translateZ(-100px);
+    }
+    
+    .card.right-1 {
+        transform: translateX(80px) scale(0.85) translateZ(-100px);
+    }
+    
+    .card.right-2 {
+        transform: translateX(160px) scale(0.7) translateZ(-300px);
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 50px;
+        padding: 60px 20px;
+    }
+    
+    .text-section {
+        max-width: 100%;
+    }
+    
+    .carousel-section {
+        max-width: 100%;
+    }
+    
+    .carousel-container {
+        height: 400px;
+        max-width: 350px;
+    }
+    
+    .card {
+        width: 250px;
+        height: 150px;
+    }
+    
+    .card.left-2 {
+        transform: translateX(-140px) scale(0.7) translateZ(-300px);
+    }
+    
+    .card.left-1 {
+        transform: translateX(-70px) scale(0.85) translateZ(-100px);
+    }
+    
+    .card.right-1 {
+        transform: translateX(70px) scale(0.85) translateZ(-100px);
+    }
+    
+    .card.right-2 {
+        transform: translateX(140px) scale(0.7) translateZ(-300px);
+    }
+    
+    .nav-arrow.left {
+        left: -15px;
+    }
+    
+    .nav-arrow.right {
+        right: -15px;
+    }
+    
+    .dots {
+        bottom: -35px;
+    }
+}
+
+@media (max-width: 768px) {
+    #hero {
+        padding: 15px;
+        min-height: 90vh;
+    }
+    
+    .hero-content {
+        padding: 40px 15px;
+        gap: 40px;
+    }
+    
+    .carousel-container {
+        height: 350px;
+        max-width: 300px;
+    }
+    
+    .card {
+        width: 220px;
+        height: 140px;
+    }
+    
+    .card.left-2 {
+        transform: translateX(-120px) scale(0.7) translateZ(-300px);
+    }
+    
+    .card.left-1 {
+        transform: translateX(-60px) scale(0.85) translateZ(-100px);
+    }
+    
+    .card.right-1 {
+        transform: translateX(60px) scale(0.85) translateZ(-100px);
+    }
+    
+    .card.right-2 {
+        transform: translateX(120px) scale(0.7) translateZ(-300px);
+    }
+    
+    .nav-arrow {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .nav-arrow.left {
+        left: -10px;
+    }
+    
+    .nav-arrow.right {
+        right: -10px;
+    }
+    
+    .nav-arrow svg {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .dots {
+        bottom: -30px;
+        gap: 10px;
+    }
+    
+    .dot {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content {
+        padding: 30px 10px;
+        gap: 30px;
+    }
+    
+    .text-section h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    
+    .expertise-tag {
+        margin: 3px 4px 3px 0;
+        padding: 5px 10px;
+        font-size: 0.8rem;
+    }
+    
+    .carousel-container {
+        height: 300px;
+        max-width: 250px;
+    }
+    
+    .card {
+        width: 180px;
+        height: 120px;
+        border-radius: 12px;
+    }
+    
+    .card.left-2 {
+        transform: translateX(-100px) scale(0.65) translateZ(-300px);
+    }
+    
+    .card.left-1 {
+        transform: translateX(-50px) scale(0.8) translateZ(-100px);
+    }
+    
+    .card.right-1 {
+        transform: translateX(50px) scale(0.8) translateZ(-100px);
+    }
+    
+    .card.right-2 {
+        transform: translateX(100px) scale(0.65) translateZ(-300px);
+    }
+    
+    .nav-arrow {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .nav-arrow svg {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .dots {
+        bottom: -25px;
+        gap: 8px;
+    }
+    
+    .dot {
+        width: 7px;
+        height: 7px;
+    }
+}
+
+/* Landscape orientation for mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+    #hero {
+        min-height: auto;
+        padding: 20px;
+    }
+    
+    .hero-content {
+        flex-direction: row;
+        padding: 20px;
+        gap: 20px;
+    }
+    
+    .carousel-container {
+        height: 250px;
+        max-width: 300px;
+    }
+    
+    .card {
+        width: 180px;
+        height: 120px;
+    }
+    
+    .text-section h1 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+    
+    .expertise-tag {
+        margin: 2px 3px 2px 0;
+        padding: 4px 8px;
+        font-size: 0.75rem;
+    }
+}
+
+/* Prevent text size adjustment on iOS */
+@media screen and (max-width: 768px) {
+    html {
+        -webkit-text-size-adjust: 100%;
+    }
+}
+
+/* Improve touch targets */
+button, .card, .dot {
+    touch-action: manipulation;
+}
+
+/* Additional fixes for header z-index */
+header {
+    z-index: 1000;
+}
+
+/* Ensure Download CV section is properly positioned */
+section .Download CV {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 2rem 0;
+}
