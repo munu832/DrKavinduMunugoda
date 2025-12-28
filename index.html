@@ -59,7 +59,8 @@
     </header>
 
     <main>
-        <section id="hero" class="section">
+
+              <section id="hero" class="section">
             <div class="video-background">
                 <video autoplay loop muted playsinline>
                     <source src="hero.mp4" type="video/mp4">
@@ -67,8 +68,69 @@
                 </video>
             </div>
             <div class="hero-content">
-                <h1>Dr. Kavindu Munugoda</h1>
-                <p>Pharmacognosy | Phytochemistry | Ethnobotany | Chemical Ecology</p>
+                <div class="text-section">
+                    <h1>Dr. Kavindu Munugoda</h1>
+                    <p>
+                        <span class="expertise-tag">Pharmacognosy</span>
+                        <span class="expertise-tag">Phytochemistry</span>
+                        <span class="expertise-tag">Molecular Virology</span>
+                        <span class="expertise-tag">Ethnobotany</span>
+                    </p>
+                </div>
+                <div class="carousel-section">
+                    <div class="carousel-container">
+                        <button class="nav-arrow left" aria-label="Previous image">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 18l-6-6 6-6"/>
+                            </svg>
+                        </button>
+                        <div class="carousel-track">
+                            <div class="card center" data-index="0">
+                                <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800" alt="Research Image 1">
+                            </div>
+                            <div class="card" data-index="1">
+                                <img src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=800" alt="Research Image 2">
+                            </div>
+                            <div class="card" data-index="2">
+                                <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800" alt="Research Image 3">
+                            </div>
+                            <div class="card" data-index="3">
+                                <img src="https://images.unsplash.com/photo-1574169208507-84376144848b?w=800" alt="Research Image 4">
+                            </div>
+                            <div class="card" data-index="4">
+                                <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=800" alt="Research Image 5">
+                            </div>
+                            <div class="card" data-index="5">
+                                <img src="https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?w=800" alt="Research Image 6">
+                            </div>
+                        </div>
+                        <button class="nav-arrow right" aria-label="Next image">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 6l6 6-6 6"/>
+                            </svg>
+                        </button>
+                        <div class="dots">
+                            <div class="dot active" data-index="0"></div>
+                            <div class="dot" data-index="1"></div>
+                            <div class="dot" data-index="2"></div>
+                            <div class="dot" data-index="3"></div>
+                            <div class="dot" data-index="4"></div>
+                            <div class="dot" data-index="5"></div>
+                        </div>
+                        <div class="auto-play-control">
+                            <button class="auto-play-btn" aria-label="Pause auto play">
+                                <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <rect x="6" y="4" width="4" height="16"></rect>
+                                    <rect x="14" y="4" width="4" height="16"></rect>
+                                </svg>
+                                <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+                                    <path d="M8 5v14l11-7z"></path>
+                                </svg>
+                            </button>
+                            <span class="auto-play-text">Auto Play: ON</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
