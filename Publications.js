@@ -1,4 +1,4 @@
-/* ======== DATASET (edit here) ======== */
+/* ======== DATASET ======== */
 const PUBS = {
   patents: [
     {
@@ -47,12 +47,12 @@ const PUBS = {
       note: "Preprint"
     },
     {
-      title: "Refining Nature’s Defense: Production and Evaluation of Mosquito Repellents from Ocimum tenuiflorum L. (Krishna and Rama Subtypes) and Ocimum gratissimum L. Essential Oils",
+      title: "Refining Nature's Defense: Production and Evaluation of Mosquito Repellents from Ocimum tenuiflorum L. (Krishna and Rama Subtypes) and Ocimum gratissimum L. Essential Oils",
       authors: "Munugoda, K. D.; Hapugoda, M. D.; Subasinghe, S. M. C. U. P.; Hettiarachchi, D. S.",
       venue: "ChemRxiv",
       year: 2025,
-      doi: 10.26434/chemrxiv-2025-5l0v3,                     
-      link: https://doi.org/10.26434/chemrxiv-2025-5l0v3,
+      doi: "10.26434/chemrxiv-2025-5l0v3",
+      link: "https://doi.org/10.26434/chemrxiv-2025-5l0v3",
       note: "Preprint"
     }
   ],
@@ -78,7 +78,7 @@ const PUBS = {
       link: "https://doi.org/10.31357/fesympo.v26.5710"
     },
     {
-      title: "Farmers’ perceptions and willingness to adopt hydroponic systems: A study in Welimada, Sri Lanka",
+      title: "Farmers' perceptions and willingness to adopt hydroponic systems: A study in Welimada, Sri Lanka",
       authors: "Perera, M. S. S.; Fernando, P. J. S.; De Silva, P. R. S.; Munugoda, K. D.",
       venue: "International Symposium on Agriculture and Environment (ISAE-2022), University of Ruhuna, Sri Lanka",
       year: 2022,
@@ -155,45 +155,46 @@ const PUBS = {
 };
 
 /* ======== RENDERER ======== */
-
 const SECTIONS_ORDER = [
-  { key: "patents",          title: "Patents & Intellectual Property" },
-  { key: "journals",         title: "Indexed Journal Articles" },
-  { key: "preprints",        title: "Preprints" },
-  { key: "conference_papers",title: "Conference Papers" },
+  { key: "patents", title: "Patents & Intellectual Property" },
+  { key: "journals", title: "Indexed Journal Articles" },
+  { key: "preprints", title: "Preprints" },
+  { key: "conference_papers", title: "Conference Papers" },
   { key: "conference_abstracts", title: "Conference Abstracts" },
-  { key: "software",         title: "Software" },
-  { key: "under_review",     title: "Under Review" },
-  { key: "in_preparation",   title: "In Preparation" }
+  { key: "software", title: "Software" },
+  { key: "under_review", title: "Under Review" },
+  { key: "in_preparation", title: "In Preparation" }
 ];
 
-function el(tag, props={}, children=[]) {
+function el(tag, props = {}, children = []) {
   const e = document.createElement(tag);
-  Object.entries(props).forEach(([k,v])=>{
+  Object.entries(props).forEach(([k, v]) => {
     if (k === "class") e.className = v;
     else if (k === "html") e.innerHTML = v;
     else if (k.startsWith("data-")) e.setAttribute(k, v);
-    else if (k === "attrs" && v) Object.entries(v).forEach(([ak,av])=>e.setAttribute(ak,av));
+    else if (k === "attrs" && v) Object.entries(v).forEach(([ak, av]) => e.setAttribute(ak, av));
     else e[k] = v;
   });
-  (Array.isArray(children)?children:[children]).filter(Boolean).forEach(c=>e.appendChild(typeof c==="string"?document.createTextNode(c):c));
+  (Array.isArray(children) ? children : [children]).filter(Boolean).forEach(c =>
+    e.appendChild(typeof c === "string" ? document.createTextNode(c) : c)
+  );
   return e;
 }
 
 function buildBadgeRow(doi, link) {
-  const row = el("div", { class: "badge-row" });
+  const row = el("div", { class: "badge-container" });
   if (doi) {
     row.appendChild(el("span", {
       class: "__dimensions_badge_embed__",
-      attrs: {"data-doi": doi, "data-style": "large_rectangle"}
+      attrs: { "data-doi": doi, "data-style": "large_rectangle" }
     }));
     const altmetric = el("div", { class: "altmetric-embed" });
-    altmetric.setAttribute("data-badge-type","1");
+    altmetric.setAttribute("data-badge-type", "1");
     altmetric.setAttribute("data-doi", doi);
     row.appendChild(altmetric);
   }
   if (link) {
-    row.appendChild(el("a", { class:"read-more", href: link, target: "_blank" }, "Open"));
+    row.appendChild(el("a", { class: "read-more", href: link, target: "_blank" }, "Open"));
   }
   return row;
 }
@@ -201,12 +202,12 @@ function buildBadgeRow(doi, link) {
 function buildShareRow(linkOrDoi) {
   if (!linkOrDoi) return el("div");
   const url = linkOrDoi.startsWith("http") ? linkOrDoi : `https://doi.org/${linkOrDoi}`;
-  return el("div", { class: "share" }, [
-    el("span", {}, "Share:"),
-    el("a", { href:`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}`, target:"_blank", title:"Share on X/Twitter", html:'<i class="fab fa-twitter"></i>' }),
-    el("a", { href:`https://www.linkedin.com/shareArticle?url=${encodeURIComponent(url)}`, target:"_blank", title:"Share on LinkedIn", html:'<i class="fab fa-linkedin"></i>' }),
-    el("a", { href:`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, target:"_blank", title:"Share on Facebook", html:'<i class="fab fa-facebook"></i>' }),
-    el("a", { href:`mailto:?subject=Item from Dr. Munugoda&body=${encodeURIComponent(url)}`, target:"_blank", title:"Share via Email", html:'<i class="fas fa-envelope"></i>' })
+  return el("div", { class: "social-share" }, [
+    el("span", {}, "Share this on:"),
+    el("a", { href: `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}`, target: "_blank", title: "Share on Twitter", html: '<i class="fab fa-twitter"></i>' }),
+    el("a", { href: `https://www.linkedin.com/shareArticle?url=${encodeURIComponent(url)}`, target: "_blank", title: "Share on LinkedIn", html: '<i class="fab fa-linkedin"></i>' }),
+    el("a", { href: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, target: "_blank", title: "Share on Facebook", html: '<i class="fab fa-facebook"></i>' }),
+    el("a", { href: `mailto:?subject=Interesting publication from Dr. Kavindu Munugoda&body=${encodeURIComponent(url)}`, target: "_blank", title: "Share via Email", html: '<i class="fas fa-envelope"></i>' })
   ]);
 }
 
@@ -231,18 +232,17 @@ function card(item) {
   const share = buildShareRow(item.link || item.doi);
 
   return el("div", {
-    class: "pub-card fade-in",
+    class: "publication fade-in",
     attrs: {
       "data-year": item.year || "",
-      "data-venue": item.venue || "",
-      "data-tags": (item.tags || "").toString().toLowerCase()
+      "data-venue": item.venue || ""
     }
   }, [title, authors, meta, badges, share]);
 }
 
 function section(title, items) {
   if (!items || !items.length) return null;
-  return el("div", { class: "pub-section" }, [
+  return el("div", { class: "publication-section" }, [
     el("h3", {}, title),
     ...items.map(card)
   ]);
@@ -250,8 +250,10 @@ function section(title, items) {
 
 function renderAll(data) {
   const root = document.getElementById("pub-root");
+  if (!root) return;
+  
   root.innerHTML = "";
-  SECTIONS_ORDER.forEach(({key, title})=>{
+  SECTIONS_ORDER.forEach(({ key, title }) => {
     const sec = section(title, data[key]);
     if (sec) root.appendChild(sec);
   });
@@ -262,31 +264,67 @@ function renderAll(data) {
 }
 
 function filterCards(q) {
-  const cards = Array.from(document.querySelectorAll(".pub-card"));
+  const cards = Array.from(document.querySelectorAll(".publication"));
   const needle = q.trim().toLowerCase();
-  cards.forEach(c=>{
+  cards.forEach(c => {
     const hay = c.innerText.toLowerCase();
     c.style.display = hay.includes(needle) ? "" : "none";
   });
 }
 
-/* ======== INIT ======== */
-document.addEventListener("DOMContentLoaded", ()=>{
-  renderAll(PUBS);
-
-  const box = document.getElementById("pub-search");
-  if (box) box.addEventListener("input", ()=>filterCards(box.value || ""));
-
-  const dl = document.getElementById("download-json");
-  if (dl) dl.addEventListener("click", ()=>{
-    const blob = new Blob([JSON.stringify(PUBS, null, 2)], {type:"application/json"});
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "kavindu_munugoda_publications.json";
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    URL.revokeObjectURL(url);
-  });
+/* ======== INITIALIZATION ======== */
+document.addEventListener("DOMContentLoaded", () => {
+  // For dynamic rendering (if you switch to it later)
+  // renderAll(PUBS);
+  
+  // Fade-in effect for publications page
+  const fadeElements = document.querySelectorAll('.fade-in');
+  const fadeInOnScroll = () => {
+    fadeElements.forEach(element => {
+      const elementTop = element.getBoundingClientRect().top;
+      const elementBottom = element.getBoundingClientRect().bottom;
+      if (elementTop < window.innerHeight && elementBottom > 0) {
+        element.classList.add('visible');
+      }
+    });
+  };
+  
+  window.addEventListener('scroll', fadeInOnScroll);
+  fadeInOnScroll(); // Initial check
+  
+  // Initialize Altmetric badges
+  if (typeof _altmetric_embed_init === 'function') {
+    _altmetric_embed_init();
+  }
+  
+  // Initialize Dimensions badges
+  if (typeof __dimensions_embed === 'object' && __dimensions_embed.addBadges) {
+    __dimensions_embed.addBadges();
+  }
+  
+  // Mobile menu toggle
+  const menuIcon = document.querySelector('.menu-icon');
+  if (menuIcon) {
+    menuIcon.addEventListener('click', toggleMenu);
+  }
 });
+
+/* ======== MOBILE MENU TOGGLE ======== */
+function toggleMenu() {
+  var nav = document.getElementById("main-nav");
+  nav.classList.toggle("show");
+}
+
+/* ======== DARK MODE TOGGLE ======== */
+function switchTheme() {
+  const body = document.body;
+  const themeToggle = document.getElementById('theme-toggle');
+  
+  body.classList.toggle("darkmode");
+  
+  if (body.classList.contains("darkmode")) {
+    themeToggle.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
+  } else {
+    themeToggle.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';
+  }
+}
