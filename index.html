@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. K.D. Munugoda | Research Associate MRI | Natural Product Scientist</title>
+    <meta name="description" content="Official portfolio of Dr. K.D. Munugoda, Research Associate at MRI Sri Lanka and former ICGEB Fellow. Specializing in Natural Product Drug Discovery, Molecular Virology, and Ethnobotany.">
+    <meta name="keywords" content="K.D. Munugoda, Kavindu Munugoda, Natural Product Scientist, Molecular Virology, Phytochemistry, MRI Sri Lanka, ICGEB Fellow, Vector Control, Dengue Research, HPV Therapeutics">
+    <meta name="author" content="Dr. K.D. Munugoda">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Dr. K.D. Munugoda | Natural Product Scientist">
+    <meta property="og:description" content="Research Associate at MRI Sri Lanka specializing in Natural Product Drug Discovery, Computational Biology, and Molecular Virology">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="hero.jpeg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="logo.jpeg">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Dr. K.D. Munugoda",
+      "givenName": "Kavindu",
+      "familyName": "Munugoda",
+      "jobTitle": "Research Associate",
+      "worksFor": [
+        {
+          "@type": "Organization",
+          "name": "Medical Research Institute (MRI)",
+          "location": "Sri Lanka"
+        },
+        {
+          "@type": "Organization",
+          "name": "ICGEB China Regional Research Centre",
+          "location": "China"
+        }
+      ],
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Sri Jayewardenepura"
+      },
+      "knowsAbout": [
+        "AlphaFold3",
+        "Molecular Docking",
+        "Viral Replisome",
+        "Natural Product Chemistry",
+        "Antimicrobial Peptides",
+        "HPV Therapeutics",
+        "Pharmacognosy",
+        "Molecular Virology",
+        "Vector Control",
+        "Data Science"
+      ],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Computational Biologist",
+        "skills": "Structure-guided drug discovery, I-TASSER, Blind Docking"
+      },
+      "award": "NSF SUSRED Award 2024",
+      "creativeWork": [
+        {
+          "@type": "ScholarlyArticle",
+          "headline": "Targeting the Viral Replisome in Cancer: Phytochemical Inhibition of DNA Polymerase and Helicase",
+          "author": { "@type": "Person", "name": "Dr. K.D. Munugoda" },
+          "keywords": "Viral carcinogenesis, Episomal maintenance, Synthetic lethality",
+          "dateCreated": "2026",
+          "status": "In Preparation"
+        },
+        {
+          "@type": "ResearchProject",
+          "name": "Structural Modeling of Bee Defensin-1 (Royalisin)",
+          "description": "3D structure generation and docking of Apis mellifera antimicrobial peptide against Mycobacterium tuberculosis and Staphylococcus aureus using AlphaFold3.",
+          "instrument": ["AlphaFold3", "I-TASSER", "AutoDock Vina"]
+        }
+      ],
+      "sameAs": [
+        "https://scholar.google.com/citations?user=9kfdQ4cAAAAJ",
+        "https://www.linkedin.com/in/kavindu-munugoda-18436bb6/",
+        "https://orcid.org/0000-0003-2188-0249",
+        "https://github.com/munu832"
+      ]
+    }
+    </script>
+    
+    <!-- Fonts - Distinctive Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0D4F4C',
+                        secondary: '#B87333',
+                        accent: '#9CAF88',
+                        charcoal: '#2C2C2C',
+                        darkBg: '#0f172a',
+                        darkCard: '#1e293b',
+                        sage: '#8BA888',
+                        bronze: '#CD7F32'
+                    },
+                    fontFamily: {
+                        sans: ['DM Sans', 'sans-serif'],
+                        display: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Enhanced gradient background */
+        .hero-gradient {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #dbeafe 100%);
+        }
+        .dark .hero-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+        }
+        
+        /* Floating animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(3deg); }
+        }
+        
+        .float-animate {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Sophisticated hover effects */
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+        
+        .dark .card-hover:hover {
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+        
+        /* Elegant underline effect */
+        .elegant-link {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .elegant-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #0D4F4C, #9CAF88);
+            transition: width 0.3s ease;
+        }
+        
+        .elegant-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Image slideshow */
+        .slideshow-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 24px;
+        }
+        
+        .slide {
+            display: none;
+            animation: fadeIn 1s;
+        }
+        
+        .slide.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Stagger animations */
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        .stagger-5 { animation-delay: 0.5s; }
+        .stagger-6 { animation-delay: 0.6s; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-darkBg dark:text-gray-200 transition-colors duration-500">
+    
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-white px-4 py-2 rounded-lg z-50">
+        Skip to main content
+    </a>
+
+    <!-- Enhanced Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect border-b border-white/20 dark:border-gray-700/30 backdrop-blur-xl" role="navigation" aria-label="Main navigation">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-4">
+                    <img src="logo.jpeg" alt="Dr. K.D. Munugoda" class="h-12 w-12 rounded-full border-2 border-primary dark:border-accent object-cover shadow-lg ring-2 ring-primary/10" loading="lazy">
+                    <div>
+                        <h1 class="text-xl font-bold text-primary dark:text-accent font-display leading-none">Dr. K.D. Munugoda</h1>
+                        <span class="text-[10px] text-gray-500 dark:text-gray-400 font-medium uppercase tracking-wider">Natural Product Scientist</span>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link elegant-link">Home</a>
+                    <a href="#about" class="nav-link elegant-link">About</a>
+                    <a href="#research" class="nav-link elegant-link">Experience</a>
+                    <a href="#projects" class="nav-link elegant-link">Projects</a>
+                    <a href="#expertise" class="nav-link elegant-link">Expertise</a>
+                    <a href="publications.html" class="nav-link elegant-link">Publications</a>
+                    <a href="#contact" class="nav-link elegant-link">Contact</a>
+                    
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-all hover:scale-110" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon dark:hidden text-primary text-lg"></i>
+                        <i class="fas fa-sun hidden dark:block text-yellow-400 text-lg"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle menu" aria-expanded="false">
+                    <i class="fas fa-bars text-xl text-primary dark:text-accent"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="#home" class="nav-link-mobile">Home</a>
+                    <a href="#about" class="nav-link-mobile">About</a>
+                    <a href="#research" class="nav-link-mobile">Experience</a>
+                    <a href="#projects" class="nav-link-mobile">Projects</a>
+                    <a href="#expertise" class="nav-link-mobile">Expertise</a>
+                    <a href="publications.html" class="nav-link-mobile">Publications</a>
+                    <a href="#contact" class="nav-link-mobile">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <!-- Enhanced Hero Section -->
+        <section id="home" class="pt-32 pb-20 min-h-screen flex items-center relative overflow-hidden hero-gradient">
+            <div id="particles-js" class="absolute inset-0 z-0 opacity-40 dark:opacity-20" aria-hidden="true"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div class="fade-in-up space-y-6">
+                        <div class="flex flex-wrap gap-2 mb-6 stagger-1 fade-in-up">
+                            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 dark:bg-green-500/20 text-green-700 dark:text-green-400 font-semibold text-sm border border-green-500/20">
+                                <span class="relative flex h-2 w-2">
+                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                                </span>
+                                Research Associate @ MRI Sri Lanka
+                            </div>
+                            <span class="px-4 py-2 rounded-full bg-yellow-500/10 text-yellow-700 dark:text-yellow-400 font-semibold text-sm border border-yellow-500/20">
+                                <i class="fas fa-trophy"></i> Former ICGEB Fellow
+                            </span>
+                        </div>
+                        
+                        <h2 class="text-5xl md:text-6xl lg:text-7xl font-bold font-display text-charcoal dark:text-white leading-tight stagger-2 fade-in-up">
+                            Bridging 
+                            <span class="gradient-text block mt-2">Ethnobotany</span>
+                            & Molecular Virology
+                        </h2>
+                        
+                        <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed stagger-3 fade-in-up">
+                            Specializing in <span class="font-semibold text-primary dark:text-accent">Natural Product Drug Discovery</span> for cancer and viral diseases. 
+                            Expert in developing WHO-compliant vector control solutions.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-4 stagger-4 fade-in-up">
+                             <a href="publications.html" class="px-8 py-4 bg-primary dark:bg-accent text-white rounded-xl font-semibold hover:shadow-2xl transition-all hover:scale-105 flex items-center gap-2 group">
+                                View Research
+                                <i class="fas fa-external-link-alt group-hover:scale-110 transition-transform"></i>
+                            </a>
+                            <a href="K.D.Munugoda CV.pdf" target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm text-primary dark:text-accent rounded-xl font-semibold hover:shadow-xl transition-all border-2 border-primary/20 dark:border-accent/20 hover:scale-105 flex items-center gap-2">
+                                <i class="fas fa-download"></i> Download CV
+                            </a>
+                        </div>
+                        
+                        <div class="flex items-center gap-6 pt-6 stagger-5 fade-in-up">
+                            <a href="https://github.com/munu832" target="_blank" rel="noopener noreferrer" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-accent transition-all hover:scale-125" aria-label="GitHub profile">
+                                <i class="fab fa-github text-2xl"></i>
+                            </a>
+                            <a href="https://scholar.google.com/citations?user=9kfdQ4cAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-accent transition-all hover:scale-125" aria-label="Google Scholar profile">
+                                <i class="fas fa-graduation-cap text-2xl"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/kavindu-munugoda-18436bb6/" target="_blank" rel="noopener noreferrer" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-accent transition-all hover:scale-125" aria-label="LinkedIn profile">
+                                <i class="fab fa-linkedin text-2xl"></i>
+                            </a>
+                            <a href="https://orcid.org/0000-0003-2188-0249" target="_blank" rel="noopener noreferrer" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-accent transition-all hover:scale-125" aria-label="ORCID profile">
+                                <i class="fab fa-orcid text-2xl"></i>
+                            </a>
+                            <a href="https://www.researchgate.net/profile/Kavindu-Munugoda" target="_blank" rel="noopener noreferrer" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-accent transition-all hover:scale-125" aria-label="ResearchGate profile">
+                                <i class="fab fa-researchgate text-2xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Hero Image with floating badges -->
+                    <div class="relative flex justify-center items-center stagger-6 fade-in-up">
+                        <div class="relative w-full max-w-md aspect-square">
+                            <!-- Rotating background circles -->
+                            <div class="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 blur-3xl animate-pulse"></div>
+                            <div class="absolute inset-10 rounded-full bg-gradient-to-tr from-secondary/20 to-primary/20 blur-2xl float-animate"></div>
+                            
+                            <!-- Central hero image container -->
+                            <div class="relative z-10 w-full h-full flex items-center justify-center">
+                                <div class="w-80 h-80 rounded-full border-4 border-primary/30 dark:border-accent/30 p-4 bg-white/50 dark:bg-gray-800/50 backdrop-blur-md shadow-2xl overflow-hidden">
+                                    <!-- Hero image -->
+                                    <img src="hero.jpeg" alt="Dr. K.D. Munugoda" class="w-full h-full rounded-full object-cover shadow-xl">
+                                </div>
+                            </div>
+                            
+                            <!-- Floating badges -->
+                            <div class="absolute top-10 -left-4 bg-white dark:bg-darkCard px-4 py-3 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 float-animate">
+                                <div class="text-sm font-bold text-primary dark:text-accent">6+ Years</div>
+                                <div class="text-xs text-gray-500">Research</div>
+                            </div>
+                            
+                            <div class="absolute bottom-10 -right-4 bg-white dark:bg-darkCard px-4 py-3 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 float-animate" style="animation-delay: 0.5s;">
+                                <div class="text-sm font-bold text-secondary">127+ Plants</div>
+                                <div class="text-xs text-gray-500">Screened</div>
+                            </div>
+                            
+                            <div class="absolute top-1/3 -right-8 bg-white dark:bg-darkCard px-4 py-3 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 float-animate" style="animation-delay: 1s;">
+                                <div class="text-sm font-bold text-accent dark:text-green-400">5+</div>
+                                <div class="text-xs text-gray-500">Formulations</div>
+                            </div>
+                            
+                            <div class="absolute top-1/4 -left-12 bg-white dark:bg-darkCard px-4 py-3 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 float-animate" style="animation-delay: 1.5s;">
+                                <div class="text-sm font-bold text-green-600 dark:text-green-400">WHO</div>
+                                <div class="text-xs text-gray-500">Compliant</div>
+                            </div>
+                            
+                            <div class="absolute bottom-1/4 -left-8 bg-white dark:bg-darkCard px-4 py-3 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 float-animate" style="animation-delay: 2s;">
+                                <div class="text-sm font-bold text-yellow-600 dark:text-yellow-400">Patent</div>
+                                <div class="text-xs text-gray-500">Grant 2024</div>
+                            </div>
+                            
+                            <div class="absolute top-2/3 right-2 bg-white dark:bg-darkCard px-4 py-3 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 float-animate" style="animation-delay: 2.5s;">
+                                <div class="text-sm font-bold text-purple-600 dark:text-purple-400">Award</div>
+                                <div class="text-xs text-gray-500">Winning</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Stats Banner -->
+                <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                    <div class="bg-white/80 dark:bg-darkCard/80 backdrop-blur-sm p-6 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-lg card-hover stagger-1 fade-in-up">
+                        <div class="text-3xl md:text-4xl font-bold text-primary dark:text-accent mb-2 counter" data-target="6">0</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">Years Experience</div>
+                    </div>
+                    
+                    <div class="bg-white/80 dark:bg-darkCard/80 backdrop-blur-sm p-6 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-lg card-hover stagger-2 fade-in-up">
+                        <div class="text-3xl md:text-4xl font-bold text-secondary mb-2 counter" data-target="9">0</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">Publications</div>
+                    </div>
+                    
+                    <div class="bg-white/80 dark:bg-darkCard/80 backdrop-blur-sm p-6 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-lg card-hover stagger-3 fade-in-up">
+                        <div class="text-3xl md:text-4xl font-bold text-accent dark:text-green-400 mb-2 counter" data-target="1">0</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">Patent</div>
+                    </div>
+                    
+                    <div class="bg-white/80 dark:bg-darkCard/80 backdrop-blur-sm p-6 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-lg card-hover stagger-4 fade-in-up">
+                        <div class="text-3xl md:text-4xl font-bold text-yellow-600 dark:text-yellow-400 mb-2 counter" data-target="4">0</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">Awards & Grants</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section with Image Slideshow -->
+        <section id="about" class="py-24 bg-white dark:bg-darkBg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 fade-in-up">
+                    <h2 class="text-4xl md:text-5xl font-bold font-display text-charcoal dark:text-white mb-4">About Me</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6 fade-in-up stagger-1">
+                        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                            My research journey operates at the intersection of ancient wisdom and modern computational science. I combine traditional ethnobotanical knowledge with cutting-edge molecular techniques to accelerate the hit identification process for novel therapeutics. With over 6 years of experience, I have specialized in identifying and characterizing bioactive natural products from Sri Lankan biodiversity, translating indigenous plant wisdom into rigorous pharmaceutical applications.
+                        </p>
+                                                                       
+                        <div class="bg-gradient-to-br from-primary/5 to-accent/5 dark:from-primary/10 dark:to-accent/10 p-6 rounded-2xl border border-primary/20">
+                            <h3 class="font-bold text-xl mb-3 text-primary dark:text-accent">Current Research Focus</h3>
+                            <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-virus text-secondary mt-1"></i>
+                                    <span><strong>Antiviral Drug Discovery:</strong> Development of plant-based therapeutics targeting HPV episomal maintenance and viral replication machinery.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-cube text-primary dark:text-accent mt-1"></i>
+                                    <span><strong>Computational Structural Biology:</strong> High-throughput virtual screening and blind docking of antimicrobial peptides (AMPs) using AlphaFold 3.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-dna text-purple-600 mt-1"></i>
+                                    <span><strong>Molecular Virology:</strong> Investigating Synthetic Lethality in virus-addicted cancer cells by targeting the viral replisome.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-seedling text-accent mt-1"></i>
+                                    <span><strong>Vector Control:</strong> Formulation of WHO-compliant mosquito repellents derived from underutilized aromatic plant species.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Image Slideshow -->
+                    <div class="fade-in-up stagger-2">
+                        <div class="slideshow-container relative bg-gradient-to-br from-gray-50 to-gray-100 dark:from-darkCard dark:to-darkBg border border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl overflow-hidden">
+                            <!-- Slide 1: ICGEB Open Day -->
+                            <div class="slide active">
+                                <img src="icgeb-open-day.jpg" alt="ICGEB China RRC Open Day for Local High School Students" class="w-full h-96 object-cover">
+                                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6 text-white">
+                                    <p class="text-lg font-semibold mb-1">ICGEB China RRC Open Day</p>
+                                    <p class="text-sm opacity-90">Engaging local high school students in biotechnology research</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 2: Journal Club -->
+                            <div class="slide">
+                                <img src="journal-club.jpg" alt="Journal Club Presentation at ICGEB" class="w-full h-96 object-cover">
+                                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6 text-white">
+                                    <p class="text-lg font-semibold mb-1">Journal Club Presentation</p>
+                                    <p class="text-sm opacity-90">Presenting cutting-edge research at ICGEB China RRC</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 3: CMC Delegation -->
+                            <div class="slide">
+                                <img src="cmc-delegation.jpg" alt="China Medical City Delegation Visit to Sri Lanka" class="w-full h-96 object-cover">
+                                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6 text-white">
+                                    <p class="text-lg font-semibold mb-1">International Collaboration</p>
+                                    <p class="text-sm opacity-90">CMC delegation with SLIBTEC & University of Kelaniya Medical Faculty</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 4: Drug Visualization -->
+                            <div class="slide">
+                                <img src="drug-visualization.jpg" alt="ICGEB Team and Drug Visualization" class="w-full h-96 object-cover">
+                                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6 text-white">
+                                    <p class="text-lg font-semibold mb-1">Computational Drug Discovery</p>
+                                    <p class="text-sm opacity-90">ICGEB team working on molecular visualization and drug design</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Previous/Next Buttons -->
+                            <button class="slideshow-prev absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white p-3 rounded-full transition-all hover:scale-110" aria-label="Previous slide">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="slideshow-next absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white p-3 rounded-full transition-all hover:scale-110" aria-label="Next slide">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                            
+                            <!-- Navigation dots -->
+                            <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2 bg-black/30 backdrop-blur-sm px-4 py-2 rounded-full">
+                                <button class="slideshow-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all" data-slide="0" aria-label="Go to slide 1"></button>
+                                <button class="slideshow-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all" data-slide="1" aria-label="Go to slide 2"></button>
+                                <button class="slideshow-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all" data-slide="2" aria-label="Go to slide 3"></button>
+                                <button class="slideshow-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-all" data-slide="3" aria-label="Go to slide 4"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Timeline Section -->
+        <section id="research" class="py-24 bg-gray-50 dark:bg-darkCard">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 fade-in-up">
+                    <h2 class="text-4xl md:text-5xl font-bold font-display text-charcoal dark:text-white mb-4">Professional Journey</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-4"></div>
+                    <p class="text-gray-600 dark:text-gray-400 text-lg">From academia to cutting-edge research</p>
+                </div>
+                
+                <div class="relative max-w-4xl mx-auto">
+                    <!-- Timeline line -->
+                    <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-transparent via-primary/30 dark:via-accent/30 to-transparent hidden md:block"></div>
+                    
+                    <div class="space-y-12">
+                        <!-- Current Position: MRI -->
+                        <div class="relative pl-0 md:pl-20 fade-in-up stagger-1">
+                            <div class="absolute left-6 top-6 w-5 h-5 bg-primary dark:bg-accent rounded-full border-4 border-white dark:border-darkCard shadow-lg hidden md:block">
+                                <div class="absolute inset-0 bg-primary dark:bg-accent rounded-full animate-ping opacity-75"></div>
+                            </div>
+                            
+                            <div class="bg-white dark:bg-darkBg p-8 rounded-2xl shadow-lg border-l-4 border-primary dark:border-accent card-hover">
+                                <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                                    <div>
+                                        <div class="inline-block px-3 py-1 bg-primary/10 dark:bg-accent/10 text-primary dark:text-accent rounded-full text-xs font-bold mb-3">
+                                            CURRENT POSITION
+                                        </div>
+                                        <h3 class="text-2xl font-bold text-charcoal dark:text-white font-display mb-2">Research Associate</h3>
+                                        <p class="text-lg text-primary dark:text-accent font-semibold">Medical Research Institute (MRI)</p>
+                                        <p class="text-sm text-gray-500 dark:text-gray-400">Ministry of Health, Sri Lanka</p>
+                                    </div>
+                                    <span class="text-sm font-semibold text-gray-500 dark:text-gray-400">2026 - Present</span>
+                                </div>
+                                
+                                <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                                    <li class="flex items-start gap-3">
+                                        <i class="fas fa-check-circle text-primary dark:text-accent mt-1"></i>
+                                        <span>Leading research workflows in vaccine QC & molecular biology</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <i class="fas fa-check-circle text-primary dark:text-accent mt-1"></i>
+                                        <span>Training staff on dual-luciferase reporter assays</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <i class="fas fa-check-circle text-primary dark:text-accent mt-1"></i>
+                                        <span>Developing cell culture protocols</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- ICGEB Fellowship -->
+                        <div class="relative pl-0 md:pl-20 fade-in-up stagger-2">
+                            <div class="absolute left-6 top-6 w-5 h-5 bg-yellow-500 rounded-full border-4 border-white dark:border-darkCard shadow-lg hidden md:block"></div>
+                            
+                            <div class="bg-white dark:bg-darkBg p-8 rounded-2xl shadow-lg border-l-4 border-yellow-500 card-hover">
+                                <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                                    <div>
+                                        <div class="inline-block px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300 rounded-full text-xs font-bold mb-3">
+                                            <i class="fas fa-trophy"></i> FELLOWSHIP
+                                        </div>
+                                        <h3 class="text-2xl font-bold text-charcoal dark:text-white font-display mb-2">Visiting Scientist (ICGEB Fellow)</h3>
+                                        <p class="text-lg text-yellow-600 dark:text-yellow-400 font-semibold">ICGEB China Regional Research Centre</p>
+                                    </div>
+                                    <span class="text-sm font-semibold text-gray-500 dark:text-gray-400">2024 - 2025</span>
+                                </div>
+                                
+                                <p class="text-gray-700 dark:text-gray-300 mb-4">Postdoctoral research on plant-based antiviral therapeutics against HPV</p>
+                                
+                                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-angle-right text-yellow-600 mt-1"></i>
+                                        <span>Cloned HPV11 E1/E2 genes using molecular biology techniques</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-angle-right text-yellow-600 mt-1"></i>
+                                        <span>Performed in-silico screening of natural compounds</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Graduate Research Assistant -->
+                        <div class="relative pl-0 md:pl-20 fade-in-up stagger-3">
+                            <div class="absolute left-6 top-6 w-5 h-5 bg-secondary rounded-full border-4 border-white dark:border-darkCard shadow-lg hidden md:block"></div>
+                            
+                            <div class="bg-white dark:bg-darkBg p-8 rounded-2xl shadow-lg border-l-4 border-secondary card-hover">
+                                <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-charcoal dark:text-white font-display mb-2">Graduate Research Assistant</h3>
+                                        <p class="text-lg text-secondary font-semibold">University of Kelaniya</p>
+                                        <p class="text-sm text-gray-500 dark:text-gray-400">Molecular Medicine Unit</p>
+                                    </div>
+                                    <span class="text-sm font-semibold text-gray-500 dark:text-gray-400">2023 - 2024</span>
+                                </div>
+                                
+                                <ul class="space-y-2 text-gray-700 dark:text-gray-300 text-sm">
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-angle-right text-secondary mt-1"></i>
+                                        <span>Managed Aedes mosquito colony for SIT research</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-angle-right text-secondary mt-1"></i>
+                                        <span>Developed SOPs for molecular medicine teaching labs</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-angle-right text-secondary mt-1"></i>
+                                        <span>Supervised undergraduate research projects</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- PhD -->
+                        <div class="relative pl-0 md:pl-20 fade-in-up stagger-4">
+                            <div class="absolute left-6 top-6 w-5 h-5 bg-accent dark:bg-green-500 rounded-full border-4 border-white dark:border-darkCard shadow-lg hidden md:block"></div>
+                            
+                            <div class="bg-white dark:bg-darkBg p-8 rounded-2xl shadow-lg border-l-4 border-accent dark:border-green-500 card-hover">
+                                <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-charcoal dark:text-white font-display mb-2">PhD in Pharmacognosy</h3>
+                                        <p class="text-lg text-accent dark:text-green-400 font-semibold">University of Sri Jayewardenepura</p>
+                                    </div>
+                                    <span class="text-sm font-semibold text-gray-500 dark:text-gray-400">2019 - 2023</span>
+                                </div>
+                                
+                                <ul class="space-y-2 text-gray-700 dark:text-gray-300 text-sm mb-4">
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-angle-right text-accent dark:text-green-400 mt-1"></i>
+                                        <span>Identified and screened 127 novel aromatic plant species</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-angle-right text-accent dark:text-green-400 mt-1"></i>
+                                        <span>Developed 5 WHO-compliant mosquito repellent formulations</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-angle-right text-accent dark:text-green-400 mt-1"></i>
+                                        <span>Filed patent for volatile plant oil-based products</span>
+                                    </li>
+                                </ul>
+                                
+                                <div class="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-700 rounded-lg p-3">
+                                    <div class="flex items-center gap-2">
+                                        <i class="fas fa-trophy text-yellow-600 dark:text-yellow-400"></i>
+                                        <span class="text-sm font-bold text-yellow-800 dark:text-yellow-300">NSF SUSRED Award 2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expertise Section -->
+        <section id="expertise" class="py-24 bg-gradient-to-b from-white to-gray-50 dark:from-darkBg dark:to-darkCard">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 fade-in-up">
+                    <h2 class="text-4xl md:text-5xl font-bold font-display text-charcoal dark:text-white mb-4">Technical Expertise</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-4"></div>
+                    <p class="text-gray-600 dark:text-gray-400 text-lg max-w-3xl mx-auto">
+                        Bridging computational biology, experimental virology, and natural product chemistry to accelerate therapeutic discovery
+                    </p>
+                </div>
+
+                <!-- Four Column Grid for All Skills -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- In-Silico Drug Discovery -->
+                    <div class="bg-white dark:bg-darkBg rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden card-hover fade-in-up stagger-1">
+                        <div class="bg-gradient-to-br from-purple-600 to-indigo-700 p-6 text-white">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="bg-white/20 p-3 rounded-xl">
+                                    <i class="fas fa-cube text-2xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold">In-Silico Drug Discovery</h3>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-bold text-sm text-gray-700 dark:text-gray-300 mb-2 flex items-center gap-2">
+                                        <i class="fas fa-atom text-purple-500"></i>
+                                        Structure-Based Drug Design
+                                    </h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-2">Pharmacophore modeling, protein-ligand interaction profiling, and binding site analysis</p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded text-xs">SBDD</span>
+                                        <span class="px-2 py-0.5 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded text-xs">Pharmacophore</span>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-bold text-sm text-gray-700 dark:text-gray-300 mb-2 flex items-center gap-2">
+                                        <i class="fas fa-search text-indigo-500"></i>
+                                        Virtual Screening
+                                    </h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-2">Automated hit identification using AutoDock Vina and PyRx</p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 rounded text-xs">AutoDock Vina</span>
+                                        <span class="px-2 py-0.5 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 rounded text-xs">PyRx</span>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-bold text-sm text-gray-700 dark:text-gray-300 mb-2 flex items-center gap-2">
+                                        <i class="fas fa-project-diagram text-purple-500"></i>
+                                        Structural Modeling
+                                    </h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-2">Protein structure prediction using AlphaFold 3 and I-TASSER</p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded text-xs">AlphaFold 3</span>
+                                        <span class="px-2 py-0.5 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded text-xs">I-TASSER</span>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-bold text-sm text-gray-700 dark:text-gray-300 mb-2 flex items-center gap-2">
+                                        <i class="fas fa-flask-vial text-indigo-500"></i>
+                                        ADME/Tox Profiling
+                                    </h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-2">Drug-likeness evaluation (Lipinski's Rule of 5) and pharmacokinetics</p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 rounded text-xs">ADME</span>
+                                        <span class="px-2 py-0.5 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 rounded text-xs">Lipinski Ro5</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Science & Bioinformatics -->
+                    <div class="bg-white dark:bg-darkBg rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden card-hover fade-in-up stagger-2">
+                        <div class="bg-gradient-to-br from-blue-500 to-cyan-600 p-6 text-white">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="bg-white/20 p-3 rounded-xl">
+                                    <i class="fas fa-chart-line text-2xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold">Data Science & Bioinformatics</h3>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-bold text-sm text-gray-700 dark:text-gray-300 mb-2 flex items-center gap-2">
+                                        <i class="fas fa-code text-blue-500"></i>
+                                        Scripting & Automation
+                                    </h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-2">Python for docking automation and result parsing; R for statistical modeling and geospatial analysis</p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded text-xs">Python</span>
+                                        <span class="px-2 py-0.5 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded text-xs">R</span>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-bold text-sm text-gray-700 dark:text-gray-300 mb-2 flex items-center gap-2">
+                                        <i class="fas fa-chart-bar text-cyan-500"></i>
+                                        Data Visualization
+                                    </h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-2">High-impact publication figures using Plotly, Bokeh, and ggplot2</p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded text-xs">Plotly</span>
+                                        <span class="px-2 py-0.5 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded text-xs">Bokeh</span>
+                                        <span class="px-2 py-0.5 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded text-xs">ggplot2</span>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-bold text-sm text-gray-700 dark:text-gray-300 mb-2 flex items-center gap-2">
+                                        <i class="fas fa-dna text-blue-500"></i>
+                                        Genomics
+                                    </h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-2">Chloroplast genome assembly, annotation, and phylogenetic analysis</p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded text-xs">Assembly</span>
+                                        <span class="px-2 py-0.5 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded text-xs">Phylogenetics</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Molecular Virology & Cell Biology -->
+                    <div class="bg-white dark:bg-darkBg rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden card-hover fade-in-up stagger-3">
+                        <div class="bg-gradient-to-br from-red-500 to-pink-600 p-6 text-white">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="bg-white/20 p-3 rounded-xl">
+                                    <i class="fas fa-virus text-2xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold">Molecular Virology & Cell Biology</h3>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-bold text-sm text-gray-700 dark:text-gray-300 mb-2 flex items-center gap-2">
+                                        <i class="fas fa-vials text-red-500"></i>
+                                        Assay Development
+                                    </h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-2">Design and optimization of Dual-Luciferase Reporter Assays for viral replication monitoring</p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded text-xs">Luciferase</span>
+                                        <span class="px-2 py-0.5 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded text-xs">Reporter Systems</span>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-bold text-sm text-gray-700 dark:text-gray-300 mb-2 flex items-center gap-2">
+                                        <i class="fas fa-microscope text-pink-500"></i>
+                                        Cell Culture
+                                    </h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-2">Maintenance of mammalian lines (HEK293T, HeLa, CaSki, C33A, SiHa) and transfection protocols</p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-300 rounded text-xs">HEK293T</span>
+                                        <span class="px-2 py-0.5 bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-300 rounded text-xs">HeLa</span>
+                                        <span class="px-2 py-0.5 bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-300 rounded text-xs">Transfection</span>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-bold text-sm text-gray-700 dark:text-gray-300 mb-2 flex items-center gap-2">
+                                        <i class="fas fa-dna text-red-500"></i>
+                                        Molecular Diagnostics
+                                    </h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-2">qPCR, RT-PCR, Western Blotting, DNA cloning (HPV E1/E2 genes)</p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded text-xs">qPCR</span>
+                                        <span class="px-2 py-0.5 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded text-xs">Western Blot</span>
+                                        <span class="px-2 py-0.5 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded text-xs">Cloning</span>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-bold text-sm text-gray-700 dark:text-gray-300 mb-2 flex items-center gap-2">
+                                        <i class="fas fa-bacterium text-pink-500"></i>
+                                        Protein Expression
+                                    </h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-2">E. coli protein expression systems for recombinant protein production</p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-300 rounded text-xs">E. coli Expression</span>
+                                        <span class="px-2 py-0.5 bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-300 rounded text-xs">Recombinant Protein</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phytochemistry & Analytical Chemistry -->
+                    <div class="bg-white dark:bg-darkBg rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden card-hover fade-in-up stagger-4">
+                        <div class="bg-gradient-to-br from-green-500 to-emerald-600 p-6 text-white">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="bg-white/20 p-3 rounded-xl">
+                                    <i class="fas fa-leaf text-2xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold">Phytochemistry & Analytical Chemistry</h3>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-bold text-sm text-gray-700 dark:text-gray-300 mb-2 flex items-center gap-2">
+                                        <i class="fas fa-flask text-green-500"></i>
+                                        Natural Product Isolation
+                                    </h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-2">Bio-assay guided fractionation and Soxhlet extraction of volatile oils</p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded text-xs">Extraction</span>
+                                        <span class="px-2 py-0.5 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded text-xs">Fractionation</span>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-bold text-sm text-gray-700 dark:text-gray-300 mb-2 flex items-center gap-2">
+                                        <i class="fas fa-wave-square text-emerald-500"></i>
+                                        Chemical Characterization
+                                    </h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-2">GC-MS profiling, compound identification, and standardization of herbal formulations</p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 rounded text-xs">GC-MS</span>
+                                        <span class="px-2 py-0.5 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 rounded text-xs">UV-Vis</span>
+                                        <span class="px-2 py-0.5 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 rounded text-xs">Hydrodistillation</span>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-bold text-sm text-gray-700 dark:text-gray-300 mb-2 flex items-center gap-2">
+                                        <i class="fas fa-bug text-green-500"></i>
+                                        Vector Control
+                                    </h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-2">WHO-compliant efficacy testing for insect repellents and larvicides</p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded text-xs">WHO Standards</span>
+                                        <span class="px-2 py-0.5 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded text-xs">Bioassays</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second Row: Microbiology & Bioprocessing -->
+                <div class="mt-8">
+                    <div class="bg-white dark:bg-darkBg rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden card-hover fade-in-up stagger-5">
+                        <div class="bg-gradient-to-br from-gray-600 to-gray-800 p-6 text-white">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="bg-white/20 p-3 rounded-xl">
+                                    <i class="fas fa-bacterium text-2xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold">Microbiology & Bioprocessing</h3>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-bold text-sm text-gray-700 dark:text-gray-300 mb-2 flex items-center gap-2">
+                                        <i class="fas fa-vial text-gray-600"></i>
+                                        Microbial Techniques
+                                    </h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-2">Microbial isolation and identification, colony characterization, aseptic technique and subculture</p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded text-xs">Isolation</span>
+                                        <span class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded text-xs">Aseptic Technique</span>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h4 class="font-bold text-sm text-gray-700 dark:text-gray-300 mb-2 flex items-center gap-2">
+                                        <i class="fas fa-flask text-gray-600"></i>
+                                        Bioprocessing
+                                    </h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-2">Media preparation, fermentation processes, and quality control microbiology</p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded text-xs">Media Prep</span>
+                                        <span class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded text-xs">Fermentation</span>
+                                        <span class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded text-xs">QC Microbiology</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-24 bg-gray-50 dark:bg-darkCard">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 fade-in-up">
+                    <h2 class="text-4xl md:text-5xl font-bold font-display text-charcoal dark:text-white mb-4">Featured Projects</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-4"></div>
+                    <p class="text-gray-600 dark:text-gray-400 text-lg">Bridging computational biology, data science, and laboratory innovation</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1: Phytochemistry Database -->
+                    <div class="bg-white dark:bg-darkBg rounded-3xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700 card-hover fade-in-up stagger-1">
+                        <div class="bg-gradient-to-br from-primary to-primary/80 p-8 text-white">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-white/20 p-4 rounded-2xl backdrop-blur-sm">
+                                    <i class="fas fa-leaf text-3xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold font-display">Phytochemistry Database</h3>
+                                    <p class="text-sm text-white/80">Sri Lankan Plants</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                                Interactive visualization of chemical constituents from 29 plant species studied during PhD research on mosquito repellents.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 bg-primary/10 dark:bg-primary/20 text-primary dark:text-accent rounded-full text-xs font-medium">Python</span>
+                                <span class="px-3 py-1 bg-primary/10 dark:bg-primary/20 text-primary dark:text-accent rounded-full text-xs font-medium">Bokeh</span>
+                                <span class="px-3 py-1 bg-primary/10 dark:bg-primary/20 text-primary dark:text-accent rounded-full text-xs font-medium">SQLite</span>
+                            </div>
+                            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2 mb-6">
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-primary dark:text-accent mt-1"></i>
+                                    <span>Interactive scatter & stack plots</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-primary dark:text-accent mt-1"></i>
+                                    <span>29 plant species gallery</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-primary dark:text-accent mt-1"></i>
+                                    <span>Chemical constituent analysis</span>
+                                </li>
+                            </ul>
+                            <a href="https://munu832.github.io/Phytochemistry_of_Sri_Lankan_Underexploited_Plants/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-primary dark:bg-accent text-white rounded-xl font-semibold hover:shadow-lg transition-all hover:scale-105">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Viral Replisome Review -->
+                    <div class="bg-white dark:bg-darkBg rounded-3xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700 card-hover fade-in-up stagger-2">
+                        <div class="bg-gradient-to-br from-purple-600 to-pink-600 p-8 text-white">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-white/20 p-4 rounded-2xl backdrop-blur-sm">
+                                    <i class="fas fa-virus text-3xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold font-display">Viral Replisome Targeting</h3>
+                                    <p class="text-sm text-white/80">Review Paper</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <div class="inline-block px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300 rounded-full text-xs font-bold mb-4">
+                                IN PREPARATION
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                                <strong>Title:</strong> Targeting the Viral Replisome in Cancer: Structure-Based Design of Phytochemical Inhibitors
+                            </p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                                A comprehensive review on computational acceleration of hit identification for oncogenic DNA viruses (HPV, EBV, KSHV), focusing on episomal maintenance vulnerabilities.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 bg-purple-100/50 dark:bg-purple-500/20 text-purple-700 dark:text-purple-300 rounded-full text-xs font-medium">Pharmacophore</span>
+                                <span class="px-3 py-1 bg-purple-100/50 dark:bg-purple-500/20 text-purple-700 dark:text-purple-300 rounded-full text-xs font-medium">ADME</span>
+                                <span class="px-3 py-1 bg-purple-100/50 dark:bg-purple-500/20 text-purple-700 dark:text-purple-300 rounded-full text-xs font-medium">Synthetic Lethality</span>
+                            </div>
+                            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2 mb-6">
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-purple-600 dark:text-purple-400 mt-1"></i>
+                                    <span>Pharmacophore modeling for nanomolar inhibition</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-purple-600 dark:text-purple-400 mt-1"></i>
+                                    <span>ADME profiling & selectivity indices</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-purple-600 dark:text-purple-400 mt-1"></i>
+                                    <span>Targeting DNA Polymerases & Helicases</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Antimicrobial Peptide Screening -->
+                    <div class="bg-white dark:bg-darkBg rounded-3xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700 card-hover fade-in-up stagger-3">
+                        <div class="bg-gradient-to-br from-blue-600 to-cyan-600 p-8 text-white">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-white/20 p-4 rounded-2xl backdrop-blur-sm">
+                                    <i class="fas fa-cube text-3xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold font-display">AMP Virtual Screening</h3>
+                                    <p class="text-sm text-white/80">Computational Biology</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <div class="inline-block px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full text-xs font-bold mb-4">
+                                ACTIVE RESEARCH
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                                <strong>Title:</strong> High-Throughput Virtual Screening of Novel Cationic AMPs
+                            </p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                                Structural characterization of a 50-amino acid cysteine-rich peptide (5.5 kDa) from <em>Apis mellifera</em> against <em>M. tuberculosis</em> and <em>S. aureus</em>.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 bg-blue-100/50 dark:bg-blue-500/20 text-blue-700 dark:text-blue-300 rounded-full text-xs font-medium">AlphaFold 3</span>
+                                <span class="px-3 py-1 bg-blue-100/50 dark:bg-blue-500/20 text-blue-700 dark:text-blue-300 rounded-full text-xs font-medium">I-TASSER</span>
+                                <span class="px-3 py-1 bg-blue-100/50 dark:bg-blue-500/20 text-blue-700 dark:text-blue-300 rounded-full text-xs font-medium">AutoDock Vina</span>
+                            </div>
+                            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2 mb-6">
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-blue-600 dark:text-blue-400 mt-1"></i>
+                                    <span>Cross-validation of 3D structures</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-blue-600 dark:text-blue-400 mt-1"></i>
+                                    <span>Blind docking automation workflow</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-blue-600 dark:text-blue-400 mt-1"></i>
+                                    <span>RMSD-based pose validation</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Migration Analysis -->
+                    <div class="bg-white dark:bg-darkBg rounded-3xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700 card-hover fade-in-up stagger-4">
+                        <div class="bg-gradient-to-br from-secondary to-orange-600 p-8 text-white">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-white/20 p-4 rounded-2xl backdrop-blur-sm">
+                                    <i class="fas fa-globe-asia text-3xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold font-display">Migration Nexus</h3>
+                                    <p class="text-sm text-white/80">Geospatial Analysis</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                                Geospatial analysis of corruption-migration nexus using SLBFE 2022 data with interactive maps.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 bg-secondary/10 dark:bg-secondary/20 text-secondary dark:text-orange-300 rounded-full text-xs font-medium">R</span>
+                                <span class="px-3 py-1 bg-secondary/10 dark:bg-secondary/20 text-secondary dark:text-orange-300 rounded-full text-xs font-medium">Leaflet.js</span>
+                                <span class="px-3 py-1 bg-secondary/10 dark:bg-secondary/20 text-secondary dark:text-orange-300 rounded-full text-xs font-medium">ggplot2</span>
+                            </div>
+                            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2 mb-6">
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-secondary mt-1"></i>
+                                    <span>Interactive geospatial maps</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-secondary mt-1"></i>
+                                    <span>Migration cycle visualization</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-secondary mt-1"></i>
+                                    <span>SLBFE data analysis (2022)</span>
+                                </li>
+                            </ul>
+                            <a href="https://munu832.github.io/Nexus-Between-Corruption-and-Migration-in-Sri-Lanka/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-secondary text-white rounded-xl font-semibold hover:shadow-lg transition-all hover:scale-105">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 5: Lab Management -->
+                    <div class="bg-white dark:bg-darkBg rounded-3xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700 card-hover fade-in-up stagger-5">
+                        <div class="bg-gradient-to-br from-accent to-green-600 p-8 text-white">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="bg-white/20 p-4 rounded-2xl backdrop-blur-sm">
+                                    <i class="fas fa-flask text-3xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold font-display">Lab Management</h3>
+                                    <p class="text-sm text-white/80">DNA Virology Lab</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                                Comprehensive laboratory management system for ICGEB China with inventory tracking, QR codes, AI predictions.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 bg-accent/10 dark:bg-green-500/20 text-accent dark:text-green-300 rounded-full text-xs font-medium">Python</span>
+                                <span class="px-3 py-1 bg-accent/10 dark:bg-green-500/20 text-accent dark:text-green-300 rounded-full text-xs font-medium">Tkinter</span>
+                                <span class="px-3 py-1 bg-accent/10 dark:bg-green-500/20 text-accent dark:text-green-300 rounded-full text-xs font-medium">AI</span>
+                            </div>
+                            <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-2 mb-6">
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-accent dark:text-green-400 mt-1"></i>
+                                    <span>Bilingual interface (EN/CN)</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-accent dark:text-green-400 mt-1"></i>
+                                    <span>QR code generation & scanning</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-accent dark:text-green-400 mt-1"></i>
+                                    <span>AI inventory predictions</span>
+                                </li>
+                            </ul>
+                            <a href="https://github.com/munu832/DNA-Virology-Lab-Management-System" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-accent dark:bg-green-500 text-white rounded-xl font-semibold hover:shadow-lg transition-all hover:scale-105">
+                                <i class="fab fa-github"></i>
+                                View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <footer id="contact" class="bg-charcoal dark:bg-[#0B1120] text-white pt-24 pb-12 transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 fade-in-up">
+                    <h2 class="text-4xl md:text-5xl font-bold font-display mb-4">Let's Connect</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-accent to-secondary mx-auto mb-6"></div>
+                    <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                        Open to research collaborations, scientific partnerships, and innovative opportunities in natural product drug discovery and computational biology.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 max-w-4xl mx-auto">
+                    <a href="/cdn-cgi/l/email-protection#bbd0dfd6ced5cedcd4dfdafbdcd6dad2d795d8d4d6" class="group bg-white/5 hover:bg-primary/20 p-8 rounded-2xl transition-all border border-white/10 hover:border-primary/30 card-hover fade-in-up stagger-1">
+                        <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-envelope text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Email</h3>
+                        <p class="text-gray-400 text-sm"><span class="__cf_email__" data-cfemail="244f4049514a51434b4045644349454d480a474b49">[email&#160;protected]</span></p>
+                    </a>
+                    
+                    <a href="tel:+94777806927" class="group bg-white/5 hover:bg-accent/20 p-8 rounded-2xl transition-all border border-white/10 hover:border-accent/30 card-hover fade-in-up stagger-2">
+                        <div class="bg-accent/10 w-16 h-16 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-phone text-2xl text-accent"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Phone</h3>
+                        <p class="text-gray-400 text-sm">+94 77 780 6927</p>
+                    </a>
+                </div>
+                
+                <div class="border-t border-white/10 pt-8">
+                    <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                        <div class="text-center md:text-left">
+                            <p class="text-sm text-gray-400 mb-2">© 2026 Dr. K.D. Munugoda. All rights reserved.</p>
+                            <p class="text-xs text-gray-500">Based in Ganemulla, Sri Lanka</p>
+                        </div>
+                        
+                        <div class="flex gap-6">
+                            <a href="https://github.com/munu832" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-all hover:scale-125" aria-label="GitHub profile">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="https://scholar.google.com/citations?user=9kfdQ4cAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-all hover:scale-125" aria-label="Google Scholar profile">
+                                <i class="fas fa-graduation-cap text-xl"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/kavindu-munugoda-18436bb6/" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-all hover:scale-125" aria-label="LinkedIn profile">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </a>
+                            <a href="https://orcid.org/0000-0003-2188-0249" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-all hover:scale-125" aria-label="ORCID profile">
+                                <i class="fab fa-orcid text-xl"></i>
+                            </a>
+                            <a href="https://www.researchgate.net/profile/Kavindu-Munugoda" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-all hover:scale-125" aria-label="ResearchGate profile">
+                                <i class="fab fa-researchgate text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary dark:bg-accent text-white p-4 rounded-full shadow-2xl opacity-0 pointer-events-none transition-all hover:scale-110" aria-label="Back to top">
+        <i class="fas fa-arrow-up text-lg"></i>
+    </button>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="main.js"></script>
+    <script>
+        // Image slideshow functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.slideshow-dot');
+        
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('bg-white'));
+            dots.forEach(dot => dot.classList.add('bg-white/50'));
+            
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.
