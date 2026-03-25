@@ -30,20 +30,38 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     
-    if(mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', () => {
-            const isOpen = mobileMenu.classList.contains('show');
-            
-            if(isOpen) {
-                mobileMenu.classList.remove('show');
-                mobileMenuBtn.setAttribute('aria-expanded', 'false');
-                mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
-            } else {
-                mobileMenu.classList.add('show');
-                mobileMenuBtn.setAttribute('aria-expanded', 'true');
-                mobileMenuBtn.querySelector('i').classList.replace('fa-bars', 'fa-times');
-            }
+if(mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', () => {
+        const isOpen = !mobileMenu.classList.contains('hidden');
+
+        if(isOpen) {
+            mobileMenu.classList.add('hidden');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+        } else {
+            mobileMenu.classList.remove('hidden');
+            mobileMenuBtn.setAttribute('aria-expanded', 'true');
+            mobileMenuBtn.querySelector('i').classList.replace('fa-bars', 'fa-times');
+        }
+    });
+
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
         });
+    });
+
+    document.addEventListener('click', (e) => {
+        if(!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+            mobileMenu.classList.add('hidden');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+        }
+    });
+}
 
         // Close mobile menu when clicking on a link
         const mobileLinks = mobileMenu.querySelectorAll('a');
