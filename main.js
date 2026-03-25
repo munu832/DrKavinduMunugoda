@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('theme-toggle');
     const html = document.documentElement;
     
-    // Check saved preference or system preference
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         html.classList.add('dark');
     } else {
@@ -17,8 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
         themeToggle.addEventListener('click', () => {
             html.classList.toggle('dark');
             localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
-            
-            // Reinitialize chart with new theme
             if(myChart) {
                 myChart.dispose();
                 initChart();
@@ -29,58 +26,35 @@ document.addEventListener('DOMContentLoaded', function() {
     // 2. Mobile Menu Toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    
-if(mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener('click', () => {
-        const isOpen = !mobileMenu.classList.contains('hidden');
 
-        if(isOpen) {
-            mobileMenu.classList.add('hidden');
-            mobileMenuBtn.setAttribute('aria-expanded', 'false');
-            mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
-        } else {
-            mobileMenu.classList.remove('hidden');
-            mobileMenuBtn.setAttribute('aria-expanded', 'true');
-            mobileMenuBtn.querySelector('i').classList.replace('fa-bars', 'fa-times');
-        }
-    });
-
-    const mobileLinks = mobileMenu.querySelectorAll('a');
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-            mobileMenuBtn.setAttribute('aria-expanded', 'false');
-            mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+    if(mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            if(isOpen) {
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+            } else {
+                mobileMenu.classList.remove('hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', 'true');
+                mobileMenuBtn.querySelector('i').classList.replace('fa-bars', 'fa-times');
+            }
         });
-    });
 
-    document.addEventListener('click', (e) => {
-        if(!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
-            mobileMenu.classList.add('hidden');
-            mobileMenuBtn.setAttribute('aria-expanded', 'false');
-            mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
-        }
-    });
-}
-
-        // Close mobile menu when clicking on a link
         const mobileLinks = mobileMenu.querySelectorAll('a');
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
-                mobileMenu.classList.remove('show');
+                mobileMenu.classList.add('hidden');
                 mobileMenuBtn.setAttribute('aria-expanded', 'false');
                 mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
             });
         });
 
-        // Close mobile menu when clicking outside
         document.addEventListener('click', (e) => {
             if(!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
-                if(mobileMenu.classList.contains('show')) {
-                    mobileMenu.classList.remove('show');
-                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
-                    mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
-                }
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
             }
         });
     }
@@ -98,10 +72,7 @@ if(mobileMenuBtn && mobileMenu) {
         });
 
         backToTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
 
@@ -111,8 +82,6 @@ if(mobileMenuBtn && mobileMenu) {
     
     function initChart() {
         if (!chartDom) return;
-        
-        // Wait for echarts to be available
         if(typeof echarts === 'undefined') {
             console.error('ECharts not loaded');
             return;
@@ -166,14 +135,8 @@ if(mobileMenuBtn && mobileMenu) {
                     lineStyle: { width: 2, color: mainColor },
                     areaStyle: {
                         color: new echarts.graphic.RadialGradient(0.1, 0.6, 1, [
-                            { 
-                                color: isDark ? 'rgba(156, 175, 136, 0.5)' : 'rgba(13, 79, 76, 0.5)', 
-                                offset: 0 
-                            },
-                            { 
-                                color: 'rgba(255,255,255, 0.05)', 
-                                offset: 1 
-                            }
+                            { color: isDark ? 'rgba(156, 175, 136, 0.5)' : 'rgba(13, 79, 76, 0.5)', offset: 0 },
+                            { color: 'rgba(255,255,255, 0.05)', offset: 1 }
                         ])
                     }
                 }]
@@ -183,24 +146,19 @@ if(mobileMenuBtn && mobileMenu) {
         console.log('Chart initialized');
     }
     
-    // Initialize chart when echarts is ready
     if(typeof echarts !== 'undefined') {
         initChart();
     } else {
-        // Wait for echarts to load
         window.addEventListener('load', () => {
             setTimeout(initChart, 100);
         });
     }
     
-    // Responsive chart resize
     let resizeTimeout;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
-            if(myChart) {
-                myChart.resize();
-            }
+            if(myChart) myChart.resize();
         }, 250);
     });
 
@@ -261,7 +219,6 @@ if(mobileMenuBtn && mobileMenu) {
                 p.draw(isDark);
             });
             
-            // Draw connections (Molecular Bonds)
             ctx.strokeStyle = isDark ? 'rgba(156, 175, 136, 0.15)' : 'rgba(13, 79, 76, 0.1)';
             ctx.lineWidth = 1;
             
@@ -285,7 +242,6 @@ if(mobileMenuBtn && mobileMenu) {
         initParticles();
         animate();
         
-        // Handle window resize
         let particleResizeTimeout;
         window.addEventListener('resize', () => {
             clearTimeout(particleResizeTimeout);
@@ -295,7 +251,6 @@ if(mobileMenuBtn && mobileMenu) {
             }, 250);
         });
 
-        // Pause animation when page is not visible (performance optimization)
         document.addEventListener('visibilitychange', () => {
             if(document.hidden) {
                 cancelAnimationFrame(animationFrameId);
@@ -305,12 +260,12 @@ if(mobileMenuBtn && mobileMenu) {
         });
     }
 
-    // 6. Number Counters - Simple and Reliable
+    // 6. Number Counters
     function animateCounter(element) {
         const target = parseInt(element.dataset.target);
         let current = 0;
-        const increment = target / 60; // 60 frames for smooth animation
-        const duration = 2000; // 2 seconds
+        const increment = target / 60;
+        const duration = 2000;
         const stepTime = duration / 60;
         
         const timer = setInterval(() => {
@@ -325,9 +280,7 @@ if(mobileMenuBtn && mobileMenu) {
     }
     
     const counters = document.querySelectorAll('.counter');
-    
     if(counters.length > 0) {
-        // Use IntersectionObserver for better performance
         const counterObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
@@ -336,7 +289,6 @@ if(mobileMenuBtn && mobileMenu) {
                 }
             });
         }, { threshold: 0.3 });
-        
         counters.forEach(c => counterObserver.observe(c));
     }
 
@@ -344,24 +296,17 @@ if(mobileMenuBtn && mobileMenu) {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
-            
-            // Don't prevent default for # only links
             if(href === '#') return;
-            
             e.preventDefault();
             const target = document.querySelector(href);
-            
             if(target) {
-                const offsetTop = target.offsetTop - 80; // Account for fixed nav
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
+                const offsetTop = target.offsetTop - 80;
+                window.scrollTo({ top: offsetTop, behavior: 'smooth' });
             }
         });
     });
 
-    // 8. Lazy load images (if any)
+    // 8. Lazy load images
     if('IntersectionObserver' in window) {
         const imageObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -375,24 +320,21 @@ if(mobileMenuBtn && mobileMenu) {
                 }
             });
         });
-
         document.querySelectorAll('img[data-src]').forEach(img => {
             imageObserver.observe(img);
         });
     }
 
-    // 9. Add active state to navigation based on scroll position
+    // 9. Active nav highlight on scroll
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
 
     function highlightNavigation() {
         let scrollPosition = window.scrollY + 100;
-
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
             const sectionId = section.getAttribute('id');
-
             if(scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
                 navLinks.forEach(link => {
                     link.classList.remove('text-primary', 'dark:text-accent');
@@ -404,26 +346,16 @@ if(mobileMenuBtn && mobileMenu) {
         });
     }
 
-    // Throttle scroll events for better performance
     let scrollTimeout;
     window.addEventListener('scroll', () => {
         clearTimeout(scrollTimeout);
         scrollTimeout = setTimeout(highlightNavigation, 50);
     });
 
-    // 10. Console Easter Egg for developers
-    console.log(
-        '%c👋 Hi there, fellow developer!',
-        'color: #0D4F4C; font-size: 20px; font-weight: bold;'
-    );
-    console.log(
-        '%cInterested in my research or collaboration? Let\'s connect!',
-        'color: #B87333; font-size: 14px;'
-    );
-    console.log(
-        '%cEmail: kdmunugoda@gmail.com',
-        'color: #9CAF88; font-size: 12px;'
-    );
+    // 10. Console Easter Egg
+    console.log('%c👋 Hi there, fellow developer!', 'color: #0D4F4C; font-size: 20px; font-weight: bold;');
+    console.log('%cInterested in my research or collaboration? Let\'s connect!', 'color: #B87333; font-size: 14px;');
+    console.log('%cEmail: kdmunugoda@gmail.com', 'color: #9CAF88; font-size: 12px;');
 
     // 11. Image Slideshow
     const slideshowContainer = document.querySelector('.slideshow-container');
@@ -437,7 +369,6 @@ if(mobileMenuBtn && mobileMenu) {
         let slideInterval;
         
         function showSlide(index) {
-            // Wrap around
             if(index >= slides.length) {
                 currentSlide = 0;
             } else if(index < 0) {
@@ -445,128 +376,61 @@ if(mobileMenuBtn && mobileMenu) {
             } else {
                 currentSlide = index;
             }
-            
-            // Hide all slides
             slides.forEach(slide => {
                 slide.classList.remove('active');
                 slide.style.opacity = '0';
             });
-            
-            // Remove active state from all dots
             dots.forEach(dot => {
                 dot.classList.remove('bg-white');
                 dot.classList.add('bg-white/50');
             });
-            
-            // Show current slide
             slides[currentSlide].classList.add('active');
             slides[currentSlide].style.opacity = '1';
-            
-            // Highlight current dot
             if(dots[currentSlide]) {
                 dots[currentSlide].classList.remove('bg-white/50');
                 dots[currentSlide].classList.add('bg-white');
             }
         }
         
-        function nextSlide() {
-            showSlide(currentSlide + 1);
-        }
+        function nextSlide() { showSlide(currentSlide + 1); }
+        function prevSlide() { showSlide(currentSlide - 1); }
+        function startAutoPlay() { slideInterval = setInterval(nextSlide, 5000); }
+        function stopAutoPlay() { clearInterval(slideInterval); }
         
-        function prevSlide() {
-            showSlide(currentSlide - 1);
-        }
-        
-        function startAutoPlay() {
-            slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
-        }
-        
-        function stopAutoPlay() {
-            clearInterval(slideInterval);
-        }
-        
-        // Next/Previous buttons
         if(nextBtn) {
-            nextBtn.addEventListener('click', () => {
-                nextSlide();
-                stopAutoPlay();
-                startAutoPlay(); // Restart autoplay after manual navigation
-            });
+            nextBtn.addEventListener('click', () => { nextSlide(); stopAutoPlay(); startAutoPlay(); });
         }
-        
         if(prevBtn) {
-            prevBtn.addEventListener('click', () => {
-                prevSlide();
-                stopAutoPlay();
-                startAutoPlay(); // Restart autoplay after manual navigation
-            });
+            prevBtn.addEventListener('click', () => { prevSlide(); stopAutoPlay(); startAutoPlay(); });
         }
-        
-        // Dot navigation
         dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                showSlide(index);
-                stopAutoPlay();
-                startAutoPlay(); // Restart autoplay after manual navigation
-            });
+            dot.addEventListener('click', () => { showSlide(index); stopAutoPlay(); startAutoPlay(); });
         });
         
-        // Pause on hover
         slideshowContainer.addEventListener('mouseenter', stopAutoPlay);
         slideshowContainer.addEventListener('mouseleave', startAutoPlay);
         
-        // Keyboard navigation
         document.addEventListener('keydown', (e) => {
-            if(e.key === 'ArrowLeft') {
-                prevSlide();
-                stopAutoPlay();
-                startAutoPlay();
-            } else if(e.key === 'ArrowRight') {
-                nextSlide();
-                stopAutoPlay();
-                startAutoPlay();
-            }
+            if(e.key === 'ArrowLeft') { prevSlide(); stopAutoPlay(); startAutoPlay(); }
+            else if(e.key === 'ArrowRight') { nextSlide(); stopAutoPlay(); startAutoPlay(); }
         });
         
-        // Touch/swipe support for mobile
         let touchStartX = 0;
         let touchEndX = 0;
-        
         slideshowContainer.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
         });
-        
         slideshowContainer.addEventListener('touchend', (e) => {
             touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
+            if(touchEndX < touchStartX - 50) { nextSlide(); stopAutoPlay(); startAutoPlay(); }
+            if(touchEndX > touchStartX + 50) { prevSlide(); stopAutoPlay(); startAutoPlay(); }
         });
         
-        function handleSwipe() {
-            if(touchEndX < touchStartX - 50) {
-                // Swipe left - next slide
-                nextSlide();
-                stopAutoPlay();
-                startAutoPlay();
-            }
-            if(touchEndX > touchStartX + 50) {
-                // Swipe right - previous slide
-                prevSlide();
-                stopAutoPlay();
-                startAutoPlay();
-            }
-        }
-        
-        // Initialize
         showSlide(0);
         startAutoPlay();
         
-        // Pause when page is not visible
         document.addEventListener('visibilitychange', () => {
-            if(document.hidden) {
-                stopAutoPlay();
-            } else {
-                startAutoPlay();
-            }
+            if(document.hidden) { stopAutoPlay(); } else { startAutoPlay(); }
         });
     }
 });
