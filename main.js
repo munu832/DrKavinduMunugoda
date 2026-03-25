@@ -28,7 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenu = document.getElementById('mobile-menu');
 
     if(mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', () => {
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
             const isOpen = !mobileMenu.classList.contains('hidden');
             if(isOpen) {
                 mobileMenu.classList.add('hidden');
@@ -40,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 mobileMenuBtn.querySelector('i').classList.replace('fa-bars', 'fa-times');
             }
         });
-
+    
         const mobileLinks = mobileMenu.querySelectorAll('a');
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -49,9 +50,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
             });
         });
-
+    
         document.addEventListener('click', (e) => {
-            if(!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+            if(!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target)) {
                 mobileMenu.classList.add('hidden');
                 mobileMenuBtn.setAttribute('aria-expanded', 'false');
                 mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
