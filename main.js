@@ -23,39 +23,47 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // 2. Mobile Menu Toggle
+    // 2. Mobile Menu Toggle — FIXED
+    // Root cause: CSS uses max-height/show for animation, but JS was only toggling
+    // Tailwind's `hidden` (display:none). When `hidden` was removed, the CSS
+    // `max-height: 0` still collapsed the menu to zero height — nothing visible.
+    // Fix: remove `hidden` permanently from the element and rely solely on the
+    // `.show` class (which sets max-height: 500px) to open/close.
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
 
     if(mobileMenuBtn && mobileMenu) {
+        // Remove Tailwind's `hidden` so CSS max-height transition can work
+        mobileMenu.classList.remove('hidden');
+
+        function openMenu() {
+            mobileMenu.classList.add('show');
+            mobileMenuBtn.setAttribute('aria-expanded', 'true');
+            mobileMenuBtn.querySelector('i').classList.replace('fa-bars', 'fa-times');
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.remove('show');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+        }
+
         mobileMenuBtn.addEventListener('click', (e) => {
             e.stopPropagation();
-            const isOpen = !mobileMenu.classList.contains('hidden');
-            if(isOpen) {
-                mobileMenu.classList.add('hidden');
-                mobileMenuBtn.setAttribute('aria-expanded', 'false');
-                mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
-            } else {
-                mobileMenu.classList.remove('hidden');
-                mobileMenuBtn.setAttribute('aria-expanded', 'true');
-                mobileMenuBtn.querySelector('i').classList.replace('fa-bars', 'fa-times');
-            }
+            mobileMenu.classList.contains('show') ? closeMenu() : openMenu();
         });
-    
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                mobileMenuBtn.setAttribute('aria-expanded', 'false');
-                mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
-            });
+
+        // Close when a nav link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
         });
-    
+
+        // Close when clicking outside
         document.addEventListener('click', (e) => {
-            if(!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target)) {
-                mobileMenu.classList.add('hidden');
-                mobileMenuBtn.setAttribute('aria-expanded', 'false');
-                mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+            if(mobileMenu.classList.contains('show') &&
+               !mobileMenu.contains(e.target) &&
+               !mobileMenuBtn.contains(e.target)) {
+                closeMenu();
             }
         });
     }
